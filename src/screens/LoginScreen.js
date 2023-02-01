@@ -10,7 +10,7 @@ export default LoginScreen = ({ navigation }) => {
       <Text>이것은 로그인 화면입니당!?</Text>
       <Button
         title="회원가입하기"
-        onPress={() => navigation.navigate("SignUpScreen")}
+        onPress={() => navigation.navigate("SignUpNavigator")}
       />
     </View>
   );
