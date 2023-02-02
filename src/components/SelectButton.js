@@ -2,8 +2,9 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-export default SelectButton = (props) => {
+import Margin from './Margin';
 
+export default SelectButton = (props) => {
   const onPressHandler = () => {
     if (props.role === 'tutor') {
       props.setIsTutor(true);
@@ -16,16 +17,26 @@ export default SelectButton = (props) => {
   return (
     <TouchableArea
       onPress = {() => onPressHandler()}
-    >
+      >
       <Button
         selected={props.selected}
       >
-        <Text>
-          {props.text}
-        </Text>
-        <Text>
-          가입하기
-        </Text>
+        <ImageBackground
+          source={props.role ==='tutor'? require('../../assets/tutor.png') : require('../../assets/tutee.png')}
+          resizeMode='stretch'
+        />
+        <TextSection>
+          <Text
+            selected={props.selected}
+          >
+            {props.text}
+          </Text>
+          <Text
+            selected={props.selected}
+          >
+            가입하기
+          </Text>
+        </TextSection>
       </Button>
     </TouchableArea>
   );
@@ -36,17 +47,31 @@ const TouchableArea = styled.TouchableOpacity`
 `;
 
 const Button = styled.View`
+  backgroundColor: #fff;
   marginHorizontal: 10px;
   marginVertical: 10px;
+  border: 2px solid #0C9BFB;
+  borderRadius: 12px;
+  borderColor: ${props => props.selected ? '#0C9BFB' : "grey"};
+  `;
+  
+const TextSection = styled.View`
+  width: 100%;
+  alignItems: center;
   paddingHorizontal: 10px;
   paddingVertical: 80px;
-  border: 1px solid #0C9BFB;
-  borderRadius: 12px;
-  alignItems: center;
-  borderColor: ${props => props.selected ? '#0C9BFB' : "grey"}
 `;
 
 const Text = styled.Text`
   fontSize: 24px;
-  fontWeight: 600;
+  fontWeight: 700;
+  color: ${props => props.selected ? '#0C9BFB' : "grey"};
+`;
+
+const ImageBackground = styled.ImageBackground`
+  position: absolute;
+  bottom: -45px;
+  right: -70px;
+  width: 65%;
+  height: 65%;
 `;
