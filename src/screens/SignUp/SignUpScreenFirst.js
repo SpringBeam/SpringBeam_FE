@@ -41,14 +41,9 @@ export default SignUpScreenFirst = ({ navigation }) => {
       />
       <ButtonSection
         display='flex'
-        flexDirection='row'
-        justifyContent='space-between'
+        flexDirection='row nowrap'
+        justifyContent='flex-end'
       >
-        <MoveButton
-          role='previous'
-          navigation={navigation}
-          address='LoginScreen'
-          />
         <MoveButton
           role='next'
           navigation={navigation}
@@ -62,7 +57,6 @@ export default SignUpScreenFirst = ({ navigation }) => {
 const ButtonSection = styled.View`
   display: flex;
   flexDirection: row;
-  justifyContent: space-between;
   marginVertical: 0;
   marginHorizontal: 0;
   paddingVertical: 0;
