@@ -30,8 +30,6 @@ export default SignUpScreenSecond = ({ navigation }) => {
       />
       <ButtonSection
         display='flex'
-        flexDirection='row'
-        justifyContent='space-between'
       >
         <MoveButton
           role='previous'
