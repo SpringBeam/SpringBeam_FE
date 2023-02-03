@@ -12,8 +12,8 @@ export default LoginArea = () => {
 };
 
 const Input = styled.TextInput`
-  width: 359px;
-  height: 70px;
+  width: 340px;
+  height: 55px;
   margin: 10px;
   border-radius: 12px;
   border: 1px solid #e8e8e8;
