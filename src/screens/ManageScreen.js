@@ -1,12 +1,12 @@
 import React from "react";
 import { View, Text } from 'react-native';
 
-export default SignUpScreen = () => {
+export default ManageScreen = () => {
   return (
     <View>
       <Text>
-        이것은 회원가입 화면입니당.
+        관리 스크린입니당.
       </Text>
     </View>
   );
-};
+}
