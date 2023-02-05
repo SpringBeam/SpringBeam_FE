@@ -28,6 +28,9 @@ export default SignUpScreenFourth = ({ navigation }) => {
         size={10}
       />
       <SignUpAgreement/>
+      <Margin
+        size={20}
+      />
       <ButtonSection>
         <MoveButton
           role='previous'
