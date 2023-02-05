@@ -1,8 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+
 export default LoginBtn = () => {
+  const onPressHandler = () => {
+    console.log("버튼 눌림");
+    navigation.navigate("HomeScreenNavigator");
+  };
   return (
-    <Button>
+    <Button onPress={() => onPressHandler()}>
       <Text>로그인</Text>
     </Button>
   );
