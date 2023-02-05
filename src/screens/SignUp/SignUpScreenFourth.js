@@ -40,7 +40,7 @@ export default SignUpScreenFourth = ({ navigation }) => {
         <MoveButton
           role='next'
           navigation={navigation}
-          address='SignUpScreenFourth'
+          address='SignUpScreenFifth'
         />
       </ButtonSection>
     </View>

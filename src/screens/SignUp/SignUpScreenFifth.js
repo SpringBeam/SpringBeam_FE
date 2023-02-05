@@ -1,0 +1,43 @@
+import React from 'react';
+import styled from 'styled-components';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
+import Header from '../../components/Header';
+import Margin from '../../components/Margin';
+import MoveButton from '../../components/MoveButton';
+
+const View = SafeAreaView;
+
+export default SignUpScreenFifth = ({ navigation }) => {
+  return (
+    <View>
+      <Header
+        title='회원가입'
+        navigation={navigation}
+        back='LoginScreen'
+      />
+      <Margin
+        size={10}
+      />
+      <Margin
+        size={10}
+      />
+      <ButtonSection>
+        <MoveButton
+          role='next'
+          navigation={navigation}
+          address='LoginScreen'
+        />
+      </ButtonSection>
+    </View>
+  );
+};
+
+const ButtonSection = styled.View`
+  display: flex;
+  flexDirection: row;
+  marginVertical: 0;
+  marginHorizontal: 0;
+  paddingVertical: 0;
+  paddingHorizontal: 10px; 
+`;

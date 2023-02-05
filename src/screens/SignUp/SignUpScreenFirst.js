@@ -20,7 +20,7 @@ export default SignUpScreenFirst = ({ navigation }) => {
         back='LoginScreen'
       />
       <Margin
-        size= {10}
+        size={10}
       />
       <SelectButton
         text='튜터(선생님)으로'
