@@ -6,6 +6,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../components/Header";
 import Margin from "../../components/Margin";
 import SignUpTitle from "../../components/SignUpTitle";
+import SignUpAgreement from "../../components/SignUpForm/SignUpAgreement";
 
 const View = SafeAreaView;
 
@@ -21,11 +22,12 @@ export default SignUpScreenFourth = ({ navigation }) => {
         size={20}
       />
       <SignUpTitle
-        title='3. 약관 동의'
+        title='3. 약관 동의하기'
       />
       <Margin
         size={10}
       />
+      <SignUpAgreement/>
       <ButtonSection>
         <MoveButton
           role='previous'
