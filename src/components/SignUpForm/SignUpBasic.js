@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import { Alert } from 'react-native';
