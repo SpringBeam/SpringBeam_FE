@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -15,23 +15,23 @@ export default SignUpScreenFirst = ({ navigation }) => {
   return (
     <View>
       <Header
-        title='회원가입'
+        title="회원가입"
         navigation={navigation}
-        back='LoginScreen'
+        back="LoginScreen"
       />
       <Margin
         size={10}
       />
       <SelectButton
-        text='튜터(선생님)으로'
-        role='tutor'
+        text="튜터(선생님)으로"
+        role="tutor"
         selected={isTutor}
         isTutor={isTutor}
         setIsTutor={setIsTutor}
       />
       <SelectButton
-        text='튜티(학생)으로'
-        role='tutee'
+        text="튜티(학생)으로"
+        role="tutee"
         selected={!isTutor}
         isTutor={isTutor}
         setIsTutor={setIsTutor}
@@ -40,14 +40,15 @@ export default SignUpScreenFirst = ({ navigation }) => {
         size= {10}
       />
       <ButtonSection
-        display='flex'
-        flexDirection='row nowrap'
-        justifyContent='flex-end'
+        display="flex"
+        flexDirection="row nowrap"
+        justifyContent="flex-end"
       >
         <MoveButton
-          role='next'
+          role="next"
           navigation={navigation}
-          address='SignUpScreenSecond'
+          address="SignUpScreenSecond"
+          data={isTutor}
         />
       </ButtonSection>
     </View>

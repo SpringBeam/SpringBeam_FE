@@ -1,18 +1,23 @@
 // 핵심 라이브러리
-import React from 'react';
+import React, { useCallback } from 'react';
 import styled from 'styled-components/native';
+import { useDispatch } from "react-redux";
 
 import Margin from './Margin';
 
 export default SelectButton = (props) => {
-  const onPressHandler = () => {
+  const dispatch = useDispatch();
+  
+  const onPressHandler = useCallback(() => {
     if (props.role === 'tutor') {
       props.setIsTutor(true);
+      dispatch({type: 'SELECT_TUTOR'});
     }
     else {
       props.setIsTutor(false);
+      dispatch({type: 'SELECT_TUTEE'});
     }
-  };
+  }, []);
 
   return (
     <TouchableArea

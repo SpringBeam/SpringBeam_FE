@@ -1,6 +1,5 @@
 import React from "react";
-import styled from "styled-components";
-import { Text } from 'react-native';
+import styled from "styled-components/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import Header from "../../components/Header";
@@ -14,15 +13,15 @@ export default SignUpScreenFourth = ({ navigation }) => {
   return (
     <View>
       <Header
-        title='회원가입'
+        title="회원가입"
         navigation={navigation}
-        back='LoginScreen'
+        back="LoginScreen"
       />
       <Margin
         size={20}
       />
       <SignUpTitle
-        title='3. 약관 동의하기'
+        title="3. 약관 동의하기"
       />
       <Margin
         size={10}
@@ -33,14 +32,14 @@ export default SignUpScreenFourth = ({ navigation }) => {
       />
       <ButtonSection>
         <MoveButton
-          role='previous'
+          role="previous"
           navigation={navigation}
-          address='SignUpScreenThird'
+          address="SignUpScreenThird"
         />
         <MoveButton
-          role='next'
+          role="next"
           navigation={navigation}
-          address='SignUpScreenFifth'
+          address="SignUpScreenFifth"
         />
       </ButtonSection>
     </View>
