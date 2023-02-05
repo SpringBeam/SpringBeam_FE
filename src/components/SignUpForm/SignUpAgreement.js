@@ -16,10 +16,10 @@ export default SignUpAgreement = () => {
         <ContentText>
           개인 정보 수집 및 이용 안내
         </ContentText>
-        <BouncyCheckBox
-          size={25}
-          fillColor='#0C9BFB'
-          unfillColor='#fff'
+        <BouncyCheckbox
+          fillColor="#0C9BFB"
+          unfillColor="#fff"
+          // onPress={{}}
         />
       </ContentSection>
       <Margin size={20}/>
@@ -27,17 +27,31 @@ export default SignUpAgreement = () => {
         (필수)
       </HighlightTextOne>
       <Margin size={10}/>
-      <ContentText>
-        제 3자 제공 동의
-      </ContentText>
+      <ContentSection>
+        <ContentText>
+          제 3자 제공 동의
+        </ContentText>
+        <BouncyCheckbox
+          fillColor="#0C9BFB"
+          unfillColor="#fff"
+          // onPress={{}}
+        />
+      </ContentSection>
       <Margin size={20}/>
       <HighlightTextTwo>
         (선택)
       </HighlightTextTwo>
       <Margin size={10}/>
-      <ContentText>
-        제 3자 제공 동의
-      </ContentText>
+      <ContentSection>
+        <ContentText>
+          제 3자 제공 동의
+        </ContentText>
+        <BouncyCheckbox
+          fillColor="#0C9BFB"
+          unfillColor="#fff"
+          // onPress={{}}
+        />
+      </ContentSection>
     </AgreementSection>
   );
 };
