@@ -1,19 +1,14 @@
 import React from "react";
 import styled from "styled-components/native";
-import { Text, Button } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useSelector } from "react-redux";
 
 import Header from "../../components/Header";
-import SignUpTitle from "../../components/SignUpTitle";
-import SignUpBasic from "../../components/SignUpForm/SignUpBasic";
+import Margin from "../../components/Margin";
 import MoveButton from "../../components/MoveButton";
 
 const View = SafeAreaView;
 
-export default SignUpScreenSecond = ({ navigation }) => {
-  const value = useSelector((state)=> state.role.role)
-  console.log(value)
+export default SignUpScreenFifth = ({ navigation }) => {
   return (
     <View>
       <Header
@@ -22,27 +17,16 @@ export default SignUpScreenSecond = ({ navigation }) => {
         back="LoginScreen"
       />
       <Margin
-        size={20}
+        size={10}
       />
-      <SignUpTitle
-        title="1. 로그인 정보 기입하기"
-      />
-      <SignUpBasic />
       <Margin
         size={10}
       />
-      <ButtonSection
-        display="flex"
-      >
-        <MoveButton
-          role="previous"
-          navigation={navigation}
-          address="SignUpScreenFirst"
-        />
+      <ButtonSection>
         <MoveButton
           role="next"
           navigation={navigation}
-          address="SignUpScreenThird"
+          address="LoginScreen"
         />
       </ButtonSection>
     </View>
@@ -52,7 +36,6 @@ export default SignUpScreenSecond = ({ navigation }) => {
 const ButtonSection = styled.View`
   display: flex;
   flexDirection: row;
-  justifyContent: space-between;
   marginVertical: 0;
   marginHorizontal: 0;
   paddingVertical: 0;

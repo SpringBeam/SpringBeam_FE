@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
+import { Provider } from "react-redux";
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import * as SplashScreen from 'expo-splash-screen';
+import store from "./src/store/store";
 
 import RootNavigator from './src/navigators/RootNavigator';
 
@@ -17,9 +19,11 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <NavigationContainer>
-        <RootNavigator />
-      </NavigationContainer>
+      <Provider store={store}>
+        <NavigationContainer>
+          <RootNavigator />
+        </NavigationContainer>
+      </Provider>
     </SafeAreaProvider>
   );
 }
