@@ -12,8 +12,8 @@ import MoveButton from "../../components/MoveButton";
 const View = SafeAreaView;
 
 export default SignUpScreenSecond = ({ navigation }) => {
-  const value = useSelector((state)=> state.role.role)
-  console.log(value)
+  const signUpType = useSelector((state)=> state.role.role)
+  console.log('튜터인가?', signUpType)
   return (
     <View>
       <Header
@@ -36,11 +36,13 @@ export default SignUpScreenSecond = ({ navigation }) => {
       >
         <MoveButton
           role="previous"
+          text="이전"
           navigation={navigation}
           address="SignUpScreenAgreement"
         />
         <MoveButton
           role="next"
+          text="제출"
           navigation={navigation}
           address="SignUpScreenComplete"
         />

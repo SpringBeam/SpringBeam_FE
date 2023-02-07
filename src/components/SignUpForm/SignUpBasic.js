@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components/native';
-import { Formik } from 'formik';
+import { Formik, useFormikContext } from 'formik';
 import * as yup from 'yup';
 import { Alert } from 'react-native';
 
 import Margin from '../Margin';
 
 export default SignUpBasic = () => {
+
+  const [ isChange, setIsChange ] = useState(false);
+  const [ body, setBody ] = useState();
+  const [ errors, setErrors ] = useState();
+
+  const formRef = useRef();
+
+  useEffect(()=>{
+    setBody(formRef.current.values)
+    setErrors(formRef.current.errors)
+    console.log(formRef.current.values, formRef.current.errors)
+  }, [isChange])
+
   return(
     <Formik
       initialValues={{
@@ -34,13 +47,14 @@ export default SignUpBasic = () => {
           .string()
           .required('이름을 입력해주세요!'),
       })}
+      innerRef={formRef}
     >
-      {({ values, handleChange, errors, setFieldTouched, touched, isValid, handleSubmmit }) => (
+      {({ values, handleChange, errors, setFieldTouched}) => (
         <FormSection>
           <Input
             value={values.email}
             onChangeText={handleChange('email')}
-            onBlur={() => setFieldTouched('email')}
+            onBlur={() => {setFieldTouched('email'); setIsChange(!isChange)}}
             placeholder='이메일'
           />
           { errors.email ?
@@ -51,7 +65,7 @@ export default SignUpBasic = () => {
             value={values.password}
             secureTextEntry={true}
             onChangeText={handleChange('password')}
-            onBlur={() => setFieldTouched('password')}
+            onBlur={() => {setFieldTouched('password'); setIsChange(!isChange)}}
             placeholder='비밀번호'
           />
           { errors.password ? 
@@ -62,7 +76,7 @@ export default SignUpBasic = () => {
             value={values.passwordConfirm}
             secureTextEntry={true}
             onChangeText={handleChange('passwordConfirm')}
-            onBlur={() => setFieldTouched('passwordConfirm')}
+            onBlur={() => {setFieldTouched('passwordConfirm'); setIsChange(!isChange)}}
             placeholder='비밀번호 확인'
           />
           { errors.passwordConfirm ?
@@ -71,9 +85,8 @@ export default SignUpBasic = () => {
           }
           <Input
             value={values.name}
-            secureTextEntry={true}
             onChangeText={handleChange('name')}
-            onBlur={() => setFieldTouched('name')}
+            onBlur={() => {setFieldTouched('name'); setIsChange(!isChange)}}
             placeholder='이름'
           />
           { errors.name ?
