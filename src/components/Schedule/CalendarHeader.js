@@ -4,13 +4,15 @@ import { getDayText } from "../../utils/util";
 
 import CurrentDate from "./CurrentDate";
 
-export default CalendarHeader = (props) => {
-  const selectedDate = props.selectedDate;
+export default CalendarHeader = ({selectedDate, showDatePicker, addMonth, subtractMonth}) => {
 
   return(
     <HeaderSection>
       <CurrentDate
         selectedDate={selectedDate}
+        showDatePicker={showDatePicker}
+        addMonth={addMonth}
+        subtractMonth={subtractMonth}
       />
       <ColumnSection>
         {[0, 1, 2, 3, 4, 5, 6].map(day => {
