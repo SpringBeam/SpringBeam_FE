@@ -4,19 +4,18 @@ import dayjs from "dayjs";
 
 import CurrentDateArrow from "./CurrentDateArrow";
 
-export default CurrentDate = (props) => {
-  const selectedDate = props.selectedDate;
+export default CurrentDate = ({selectedDate, showDatePicker, addMonth, subtractMonth}) => {
   const currentDateText = dayjs(selectedDate).format("YYYY.MM.DD.");
 
   return (
     <CurrentDateSection>
-      <CurrentDateArrow iconName="chevron-left" onPress={() => {}}/>
-      <CurrentTouchableArea>
+      <CurrentDateArrow iconName="chevron-left" onPress={() => subtractMonth()}/>
+      <CurrentTouchableArea onPress={() => showDatePicker()}>
         <CurrentDateText>
           {currentDateText}
         </CurrentDateText>
       </CurrentTouchableArea>
-      <CurrentDateArrow iconName="chevron-right" onPress={() => {}}/>
+      <CurrentDateArrow iconName="chevron-right" onPress={() => addMonth()}/>
     </CurrentDateSection>
   );
 };
