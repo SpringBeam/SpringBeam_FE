@@ -1,15 +1,19 @@
 import React from "react";
 import styled from "styled-components/native";
+import { Text, Button } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useSelector } from "react-redux";
 
 import Header from "../../components/Header";
-import Margin from "../../components/Margin";
 import SignUpTitle from "../../components/SignUpTitle";
-import SignUpAgreement from "../../components/SignUpForm/SignUpAgreement";
+import SignUpBasic from "../../components/SignUpForm/SignUpBasic";
+import MoveButton from "../../components/MoveButton";
 
 const View = SafeAreaView;
 
-export default SignUpScreenFourth = ({ navigation }) => {
+export default SignUpScreenSecond = ({ navigation }) => {
+  const value = useSelector((state)=> state.role.role)
+  console.log(value)
   return (
     <View>
       <Header
@@ -21,25 +25,24 @@ export default SignUpScreenFourth = ({ navigation }) => {
         size={20}
       />
       <SignUpTitle
-        title="3. 약관 동의하기"
+        title="2. 사용자 정보 입력하기"
       />
+      <SignUpBasic />
       <Margin
         size={10}
       />
-      <SignUpAgreement/>
-      <Margin
-        size={20}
-      />
-      <ButtonSection>
+      <ButtonSection
+        display="flex"
+      >
         <MoveButton
           role="previous"
           navigation={navigation}
-          address="SignUpScreenThird"
+          address="SignUpScreenAgreement"
         />
         <MoveButton
           role="next"
           navigation={navigation}
-          address="SignUpScreenFifth"
+          address="SignUpScreenComplete"
         />
       </ButtonSection>
     </View>
