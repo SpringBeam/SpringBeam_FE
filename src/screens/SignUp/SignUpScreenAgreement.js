@@ -39,11 +39,13 @@ export default SignUpScreenFourth = ({ navigation }) => {
       <ButtonSection>
         <MoveButton
           role="previous"
+          text="이전"
           navigation={navigation}
           address="SignUpScreenSelect"
         />
         <MoveButton
           role="next"
+          text="다음"
           isAgreed={isAgreed}
           navigation={navigation}
           address="SignUpScreenFillInfo"

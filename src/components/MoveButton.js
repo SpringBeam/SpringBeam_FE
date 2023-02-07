@@ -5,7 +5,6 @@ import { Alert } from "react-native";
 export default MoveButton = (props) => {
   const { navigate } = props.navigation;
   const onPressHandler = () => {
-    console.log(props.isAgreed)
     if (props.isAgreed) {
       if (props.isAgreed[0] && props.isAgreed[1]) {
         navigate(props.address);
@@ -22,7 +21,7 @@ export default MoveButton = (props) => {
   return (
     <TouchableArea onPress={() => onPressHandler()}>
       <Button role={props.role}>
-        <Text role={props.role}>{props.role === "next" ? "다음" : "이전"}</Text>
+        <Text role={props.role}>{props.text}</Text>
       </Button>
     </TouchableArea>
   );

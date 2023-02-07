@@ -46,6 +46,7 @@ export default SignUpScreenFirst = ({ navigation }) => {
       >
         <MoveButton
           role="next"
+          text="다음"
           navigation={navigation}
           address="SignUpScreenAgreement"
           data={isTutor}

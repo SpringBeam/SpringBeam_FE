@@ -25,6 +25,7 @@ export default SignUpScreenFifth = ({ navigation }) => {
       <ButtonSection>
         <MoveButton
           role="next"
+          text="다음"
           navigation={navigation}
           address="LoginScreen"
         />
