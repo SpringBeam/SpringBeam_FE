@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -10,6 +10,9 @@ import SignUpAgreement from "../../components/SignUpForm/SignUpAgreement";
 const View = SafeAreaView;
 
 export default SignUpScreenFourth = ({ navigation }) => {
+
+  const [ isAgreed, setIsAgreed ] = useState([false, false, false]);
+
   return (
     <View>
       <Header
@@ -26,7 +29,10 @@ export default SignUpScreenFourth = ({ navigation }) => {
       <Margin
         size={10}
       />
-      <SignUpAgreement/>
+      <SignUpAgreement
+        isAgreed={isAgreed}
+        setIsAgreed={setIsAgreed}
+      />
       <Margin
         size={20}
       />
@@ -38,6 +44,7 @@ export default SignUpScreenFourth = ({ navigation }) => {
         />
         <MoveButton
           role="next"
+          isAgreed={isAgreed}
           navigation={navigation}
           address="SignUpScreenFillInfo"
         />

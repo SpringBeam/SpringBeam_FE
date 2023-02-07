@@ -1,10 +1,22 @@
 import React from "react";
 import styled from "styled-components/native";
+import { Alert } from "react-native";
 
 export default MoveButton = (props) => {
   const { navigate } = props.navigation;
   const onPressHandler = () => {
-    navigate(props.address);
+    console.log(props.isAgreed)
+    if (props.isAgreed) {
+      if (props.isAgreed[0] && props.isAgreed[1]) {
+        navigate(props.address);
+      }
+      else {
+        Alert.alert('필수 약관에 동의해주세요. 🥺');
+      }
+    }
+    else {
+      navigate(props.address);
+    }
   };
 
   return (
