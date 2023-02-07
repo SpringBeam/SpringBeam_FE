@@ -13,6 +13,7 @@ export default SignUpBasic = () => {
         email: '',
         password: '',
         passwordConfirm: '',
+        name: '',
       }}
       onSubmit={values => Alert.alert(JSON.stringify(values))}
       validationSchema={yup.object().shape({
@@ -29,6 +30,9 @@ export default SignUpBasic = () => {
           .string()
           .oneOf([yup.ref("password")], '비밀번호 확인이 비밀번호와 일치하지 않습니다!')
           .required('비밀번호 확인을 입력해주세요!'),
+        name: yup
+          .string()
+          .required('이름을 입력해주세요!'),
       })}
     >
       {({ values, handleChange, errors, setFieldTouched, touched, isValid, handleSubmmit }) => (
@@ -63,6 +67,17 @@ export default SignUpBasic = () => {
           />
           { errors.passwordConfirm ?
             <ErrorText>{errors.passwordConfirm}</ErrorText> :
+            <Margin size={16} />
+          }
+          <Input
+            value={values.name}
+            secureTextEntry={true}
+            onChangeText={handleChange('name')}
+            onBlur={() => setFieldTouched('name')}
+            placeholder='이름'
+          />
+          { errors.name ?
+            <ErrorText>{errors.name}</ErrorText> :
             <Margin size={16} />
           }
         </FormSection>
