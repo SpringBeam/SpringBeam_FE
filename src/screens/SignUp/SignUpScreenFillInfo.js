@@ -5,9 +5,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useSelector } from "react-redux";
 
 import Header from "../../components/Header";
-import SignUpTitle from "../../components/SignUpTitle";
-import SignUpBasic from "../../components/SignUpForm/SignUpBasic";
-import MoveButton from "../../components/MoveButton";
+import SignUpTitle from "../../components/SignUp/SignUpTitle";
+import MoveButton from "../../components/SignUp/MoveButton";
+import SignUpBasic from "../../components/SignUp/SignUpForm/SignUpBasic";
 
 const View = SafeAreaView;
 

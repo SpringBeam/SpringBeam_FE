@@ -3,7 +3,7 @@ import React, { useCallback } from "react";
 import styled from "styled-components/native";
 import { useDispatch } from "react-redux";
 
-import Margin from "./Margin";
+import Margin from "../Margin";
 
 export default SelectButton = (props) => {
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ export default SelectButton = (props) => {
       >
         <ImageSection>
           <ImageBackground
-            source={props.role ==="tutor"? require("../../assets/tutorImg.png") : require("../../assets/tuteeImg.png")}
+            source={props.role ==="tutor"? require("../../../assets/tutorImg.png") : require("../../../assets/tuteeImg.png")}
             resizeMode="stretch"
           />
         </ImageSection>

@@ -3,11 +3,11 @@ import styled from 'styled-components/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Header from '../../components/Header';
-import SignUpTitle from '../../components/SignUpTitle';
-import MoveButton from '../../components/MoveButton';
+import SignUpTitle from '../../components/SignUp/SignUpTitle';
+import MoveButton from '../../components/SignUp/MoveButton';
 import Margin from '../../components/Margin';
-import SignUpTutor from '../../components/SignUpForm/SignUpTutor';
-import SignUpTutee from '../../components/SignUpForm/SignUpTutee';
+import SignUpTutor from '../../components/SignUp/SignUpForm/SignUpTutor';
+import SignUpTutee from '../../components/SignUp/SignUpForm/SignUpTutee';
 
 const View = SafeAreaView;
 

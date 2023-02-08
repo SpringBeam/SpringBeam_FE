@@ -4,8 +4,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import Header from "../../components/Header";
 import Margin from "../../components/Margin";
-import SignUpTitle from "../../components/SignUpTitle";
-import SignUpAgreement from "../../components/SignUpForm/SignUpAgreement";
+import SignUpTitle from "../../components/SignUp/SignUpTitle";
+import SignUpAgreement from "../../components/SignUp/SignUpForm/SignUpAgreement";
 
 const View = SafeAreaView;
 
