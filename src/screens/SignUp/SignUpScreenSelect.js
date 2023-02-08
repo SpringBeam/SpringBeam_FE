@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import Header from "../../components/Header";
 import Margin from "../../components/Margin";
-import SelectButton from "../../components/SelectButton";
-import MoveButton from "../../components/MoveButton";
+import SelectButton from "../../components/SignUp/SelectButton";
+import MoveButton from "../../components/SignUp/MoveButton";
 
 const View = SafeAreaView;
 
@@ -15,23 +15,23 @@ export default SignUpScreenFirst = ({ navigation }) => {
   return (
     <View>
       <Header
-        title='회원가입'
+        title="회원가입"
         navigation={navigation}
-        back='LoginScreen'
+        back="LoginScreen"
       />
       <Margin
-        size= {10}
+        size={10}
       />
       <SelectButton
-        text='튜터(선생님)으로'
-        role='tutor'
+        text="튜터(선생님)으로"
+        role="tutor"
         selected={isTutor}
         isTutor={isTutor}
         setIsTutor={setIsTutor}
       />
       <SelectButton
-        text='튜티(학생)으로'
-        role='tutee'
+        text="튜티(학생)으로"
+        role="tutee"
         selected={!isTutor}
         isTutor={isTutor}
         setIsTutor={setIsTutor}
@@ -40,14 +40,16 @@ export default SignUpScreenFirst = ({ navigation }) => {
         size= {10}
       />
       <ButtonSection
-        display='flex'
-        flexDirection='row nowrap'
-        justifyContent='flex-end'
+        display="flex"
+        flexDirection="row nowrap"
+        justifyContent="flex-end"
       >
         <MoveButton
-          role='next'
+          role="next"
+          text="다음"
           navigation={navigation}
-          address='SignUpScreenSecond'
+          address="SignUpScreenAgreement"
+          data={isTutor}
         />
       </ButtonSection>
     </View>

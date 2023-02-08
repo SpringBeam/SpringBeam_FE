@@ -1,16 +1,17 @@
-import React from "react";
+import React from 'react';
 import styled from 'styled-components/native';
-import { Text, Button } from 'react-native';
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-import Header from "../../components/Header";
-import SignUpTitle from "../../components/SignUpTitle";
-import SignUpBasic from "../../components/SignUpForm/SignUpBasic";
-import MoveButton from "../../components/MoveButton";
+import Header from '../../components/Header';
+import SignUpTitle from '../../components/SignUp/SignUpTitle';
+import MoveButton from '../../components/SignUp/MoveButton';
+import Margin from '../../components/Margin';
+import SignUpTutor from '../../components/SignUp/SignUpForm/SignUpTutor';
+import SignUpTutee from '../../components/SignUp/SignUpForm/SignUpTutee';
 
 const View = SafeAreaView;
 
-export default SignUpScreenSecond = ({ navigation }) => {
+export default SignUpScreenThird = ({ navigation }) => {
   return (
     <View>
       <Header
@@ -22,26 +23,25 @@ export default SignUpScreenSecond = ({ navigation }) => {
         size={20}
       />
       <SignUpTitle
-        title='1. 로그인 정보 기입하기'
+        title='2. 선생님 정보 기입하기'
       />
-      <SignUpBasic />
       <Margin
         size={10}
       />
+      <SignUpTutor/>
+      {/* <SignUpTutee/> */}
       <ButtonSection
         display='flex'
-        flexDirection='row'
-        justifyContent='space-between'
       >
         <MoveButton
           role='previous'
           navigation={navigation}
-          address='SignUpScreenFirst'
+          address='SignUpScreenSecond'
         />
         <MoveButton
           role='next'
           navigation={navigation}
-          address='SignUpScreenThird'
+          address='SignUpScreenFourth'
         />
       </ButtonSection>
     </View>

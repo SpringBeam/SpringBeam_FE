@@ -3,31 +3,21 @@ import LoginScreen from "../screens/LoginScreen";
 import SignUpNavigator from "./SignUpNavigator";
 import TabNavigator from "./TabNavigator";
 import HomeScreen from "../screens/HomeScreen";
+import SchduleScreen from '../screens/ScheduleScreen';
+
 
 const Stack = createNativeStackNavigator();
 
 export default RootNavigator = () => {
   return (
     <Stack.Navigator>
+      <Stack.Screen name='SchduleScreen' component={SchduleScreen} options={{ headerShown: false}} />
+      <Stack.Screen name='LoginScreen' component={LoginScreen} options={{ headerShown: false}} />
+      <Stack.Screen name='SignUpNavigator' component={SignUpNavigator} options={{ headerShown: false}} />
+      <Stack.Screen name='TabNavigator' component={TabNavigator} options={{ headerShown: false}} />
       <Stack.Screen
         name="HomeScreenNavigator"
         component={HomeScreen}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="LoginScreen"
-        component={LoginScreen}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="SignUpNavigator"
-        component={SignUpNavigator}
-        options={{ headerShown: false }}
-      />
-
-      <Stack.Screen
-        name="TabNavigator"
-        component={TabNavigator}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

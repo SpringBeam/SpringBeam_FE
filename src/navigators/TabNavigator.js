@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
 import SelectScreen from '../screens/SelectScreen';
-import ManageScreen from '../screens/ManageScreen';
+import ScheduleScreen from '../screens/ScheduleScreen';
 import MyPageScreen from '../screens/MyPageScreen';
 
 const TabBar = createBottomTabNavigator();
@@ -11,7 +11,7 @@ export default TabNavigator = () => {
     <TabBar.Navigator>
       <TabBar.Screen name='HomeScreen' component={HomeScreen} />
       <TabBar.Screen name='SelectScreen' component={SelectScreen} />
-      <TabBar.Screen name='ManageScreen' component={ManageScreen} />
+      <TabBar.Screen name='ScheduleScreen' component={ScheduleScreen} />
       <TabBar.Screen name='MyPageScreen' component={MyPageScreen} />
     </TabBar.Navigator>
   );
