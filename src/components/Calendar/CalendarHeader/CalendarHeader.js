@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
-import { getDayText } from "../../utils/util";
+import { getDayText } from "../../../utils/util";
 
 import CurrentDate from "./CurrentDate";
 
