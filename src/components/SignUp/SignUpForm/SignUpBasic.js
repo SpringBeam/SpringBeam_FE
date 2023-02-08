@@ -4,7 +4,7 @@ import { Formik, useFormikContext } from 'formik';
 import * as yup from 'yup';
 import { Alert } from 'react-native';
 
-import Margin from '../Margin';
+import Margin from "../../Margin";
 
 export default SignUpBasic = () => {
 

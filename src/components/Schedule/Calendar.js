@@ -4,11 +4,12 @@ import dayjs from "dayjs";
 
 import { getCalendarColumns } from "../../utils/util";
 import { useCalendar } from "../../hooks/useCalendar";
-
+import { useReviewList } from "../../hooks/useReviewList";
 import CalendarHeader from "./CalendarHeader";
 import TimePickerModal from "./TimePickerModal";
 
 export default Calendar = () => {
+  // 달력 관련 hooks
   const {
     selectedDate,
     setSelectedDate,
@@ -20,10 +21,15 @@ export default Calendar = () => {
     subtractMonth,
   } = useCalendar(now);
 
+  // 복습 노트 관련 hooks
+  const {
+    reviewList
+  } = useReviewList(selectedDate);
+
   const now = dayjs();
   const columns = getCalendarColumns(selectedDate);
 
-
+  // 잘 되는 지 확인
   console.log(isDatePickerVisible)
 
   useEffect(() => {
@@ -72,6 +78,14 @@ export default Calendar = () => {
         handleConfirm={handleConfirm}
         hideDatePicker={hideDatePicker}
       />
+      {/* <ReviewFrame
+        data={reviewList}
+        renderItem={({ item: review }) => {
+          return (
+            <ReviewText>{review.content}</ReviewText>
+          )
+        }}
+      /> */}
     </CalendarSection>
   ); 
 }
@@ -99,4 +113,12 @@ const DayText = styled.Text`
   fontSize: 12px;
   color: ${props => props.day === 0 ? "#e67639" : props.day === 6 ? "#5872d1" : "#2b2b2b"};
   opacity: ${props => props.isCurrentMonth ? 1 : 0.3 };
+`;
+
+const ReviewFrame = styled.FlatList`
+
+`;
+
+const ReviewText = styled.Text`
+
 `;

@@ -4,8 +4,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import Header from "../../components/Header";
 import Margin from "../../components/Margin";
-import SelectButton from "../../components/SelectButton";
-import MoveButton from "../../components/MoveButton";
+import SelectButton from "../../components/SignUp/SelectButton";
+import MoveButton from "../../components/SignUp/MoveButton";
 
 const View = SafeAreaView;
 

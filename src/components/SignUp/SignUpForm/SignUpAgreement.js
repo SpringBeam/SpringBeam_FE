@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
-import Margin from '../Margin';
+import Margin from '../../Margin';
 
 export default SignUpAgreement = (props) => {
 
