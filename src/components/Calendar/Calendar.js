@@ -5,7 +5,7 @@ import dayjs from "dayjs";
 import { getCalendarColumns } from "../../utils/util";
 import { useCalendar } from "../../hooks/useCalendar";
 import { useReviewList } from "../../hooks/useReviewList";
-import CalendarHeader from "./CalendarHeader";
+import CalendarHeader from "./CalendarHeader/CalendarHeader";
 import TimePickerModal from "./TimePickerModal";
 
 export default Calendar = () => {
