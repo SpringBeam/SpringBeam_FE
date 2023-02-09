@@ -1,17 +1,19 @@
 import React from "react";
-import { View, Text } from 'react-native';
+import { Text, Button, Image } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { StudentData } from "../components/Home/StudentData";
+import Header from "../components/Header";
+import Margin from "../components/Margin";
+import StudentList from "../components/Home/StudentList";
 
-import Typography from "../components/Typography";
+const View = SafeAreaView;
 
-export default HomeScreen = () => {
+export default HomeScreen = ({ navigation }) => {
   return (
     <View>
-      <Typography
-        color='red'
-        fontSize={20}
-      >
-        홈 스크린입니당.
-      </Typography>
+      <Header title="학생 목록" navigation={navigation} back="LoginScreen" />
+      <Margin size={10} />
+      <StudentList data={StudentData} />
     </View>
   );
-}
+};

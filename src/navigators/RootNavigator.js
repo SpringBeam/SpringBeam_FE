@@ -1,8 +1,10 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import LoginScreen from "../screens/LoginScreen";
+import SignUpNavigator from "./SignUpNavigator";
+import TabNavigator from "./TabNavigator";
+import HomeScreen from "../screens/HomeScreen";
 import SchduleScreen from '../screens/ScheduleScreen';
-import LoginScreen from '../screens/LoginScreen';
-import SignUpNavigator from './SignUpNavigator';
-import TabNavigator from './TabNavigator';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -13,6 +15,11 @@ export default RootNavigator = () => {
       <Stack.Screen name='LoginScreen' component={LoginScreen} options={{ headerShown: false}} />
       <Stack.Screen name='SignUpNavigator' component={SignUpNavigator} options={{ headerShown: false}} />
       <Stack.Screen name='TabNavigator' component={TabNavigator} options={{ headerShown: false}} />
+      <Stack.Screen
+        name="HomeScreenNavigator"
+        component={HomeScreen}
+        options={{ headerShown: false }}
+      />
     </Stack.Navigator>
   );
-}
+};
