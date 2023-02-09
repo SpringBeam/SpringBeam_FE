@@ -1,15 +1,12 @@
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-
-import Calendar from "../components/Schedule/Calendar";
-
+import { Text } from "react-native";
 const View = SafeAreaView;
 
 export default ScheduleScreen = () => {
-
   return (
     <View>
-      <Calendar />
+      <Text>클래스룸 스크린입니다</Text>
     </View>
   );
-}
+};
