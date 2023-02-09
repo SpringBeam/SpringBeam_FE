@@ -8,7 +8,7 @@ import MoveButton from "../../components/SignUp/MoveButton";
 
 const View = SafeAreaView;
 
-export default SignUpScreenFifth = ({ navigation }) => {
+export default SignUpScreenComplete = ({ navigation }) => {
   return (
     <View>
       <Header
@@ -22,6 +22,7 @@ export default SignUpScreenFifth = ({ navigation }) => {
       <Margin
         size={10}
       />
+      \
       <ButtonSection>
         <MoveButton
           role="next"
