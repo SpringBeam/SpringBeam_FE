@@ -9,7 +9,7 @@ import SignUpAgreement from "../../components/SignUp/SignUpForm/SignUpAgreement"
 
 const View = SafeAreaView;
 
-export default SignUpScreenFourth = ({ navigation }) => {
+export default SignUpScreenAgreement = ({ navigation }) => {
 
   const [ isAgreed, setIsAgreed ] = useState([false, false, false]);
 

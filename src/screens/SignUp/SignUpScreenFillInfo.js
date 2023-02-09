@@ -11,7 +11,7 @@ import SignUpBasic from "../../components/SignUp/SignUpForm/SignUpBasic";
 
 const View = SafeAreaView;
 
-export default SignUpScreenSecond = ({ navigation }) => {
+export default SignUpScreenFillInfo = ({ navigation }) => {
   const signUpType = useSelector((state)=> state.role.role)
   console.log('튜터인가?', signUpType)
   return (

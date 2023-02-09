@@ -9,7 +9,7 @@ import MoveButton from "../../components/SignUp/MoveButton";
 
 const View = SafeAreaView;
 
-export default SignUpScreenFirst = ({ navigation }) => {
+export default SignUpScreenSelect = ({ navigation }) => {
   const [ isTutor, setIsTutor ] = useState(true);
 
   return (
