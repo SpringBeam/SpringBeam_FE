@@ -3,16 +3,15 @@ import LoginScreen from "../screens/LoginScreen";
 import SignUpNavigator from "./SignUpNavigator";
 import TabNavigator from "./TabNavigator";
 import HomeScreen from "../screens/HomeScreen";
-import ScheduleScreen from "../screens/ScheduleScreen";
-
+import ClassroomScreen from "../screens/ClassroomScreen";
 const Stack = createNativeStackNavigator();
 
 export default RootNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="ScehduleScreen"
-        component={ScheduleScreen}
+        name="ClassroomScreen"
+        component={ClassroomScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
