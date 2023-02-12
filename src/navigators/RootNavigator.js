@@ -12,6 +12,11 @@ export default RootNavigator = () => {
       <Stack.Screen
         name="ClassroomScreen"
         component={ClassroomScreen}
+        options={{ headerShown: true }}
+      />
+      <Stack.Screen
+        name="HomeScreenNavigator"
+        component={HomeScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
@@ -27,11 +32,6 @@ export default RootNavigator = () => {
       <Stack.Screen
         name="TabNavigator"
         component={TabNavigator}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="HomeScreenNavigator"
-        component={HomeScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
