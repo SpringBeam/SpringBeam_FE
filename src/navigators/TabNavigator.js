@@ -9,10 +9,10 @@ const TabBar = createBottomTabNavigator();
 export default TabNavigator = () => {
   return (
     <TabBar.Navigator>
-      <TabBar.Screen name="HomeScreen" component={HomeScreen} />
-      <TabBar.Screen name="SelectScreen" component={SelectScreen} />
-      <TabBar.Screen name="ClassroomScreen" component={ClassroomScreen} />
-      <TabBar.Screen name="MyPageScreen" component={MyPageScreen} />
+      <TabBar.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }}/>
+      <TabBar.Screen name="SelectScreen" component={SelectScreen} options={{ headerShown: false }}/>
+      <TabBar.Screen name="ClassroomScreen" component={ClassroomScreen} options={{ headerShown: false }}/>
+      <TabBar.Screen name="MyPageScreen" component={MyPageScreen} options={{ headerShown: false }}/>
     </TabBar.Navigator>
   );
 };

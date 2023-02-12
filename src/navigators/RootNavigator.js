@@ -25,11 +25,6 @@ export default RootNavigator = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="SignUpNavigator"
-        component={SignUpNavigator}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
         name="TabNavigator"
         component={TabNavigator}
         options={{ headerShown: false }}
