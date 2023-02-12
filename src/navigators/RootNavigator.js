@@ -10,13 +10,13 @@ export default RootNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="LoginScreen"
-        component={LoginScreen}
+        name="TabNavigator"
+        component={TabNavigator}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="TabNavigator"
-        component={TabNavigator}
+        name="LoginScreen"
+        component={LoginScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
