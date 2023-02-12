@@ -94,6 +94,8 @@ const CalendarSection = styled.View`
   width: 100%;
   justifyContent: center;
   alignItems: center;
+  backgroundColor: #fff;
+  paddingBottom: 12px;
 `;
 
 const CalendarFrame = styled.FlatList`

@@ -26,6 +26,7 @@ export default Header = (props) => {
 
 // 스타일드
 const HeaderView = styled.View`
+  width: 100%;
   display: flex;
   flexDirection: row;
   backgroundColor: #0C9BFB;
