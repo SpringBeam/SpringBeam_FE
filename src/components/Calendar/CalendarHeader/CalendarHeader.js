@@ -45,13 +45,13 @@ const ColumnSection = styled.View`
 `;
   
 const ColumnDaySection = styled.TouchableOpacity`
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   justifyContent: center;
   alignItems: center;
 `;
 
 const ColumnText = styled.Text`
-  fontSize: 12px;
+  fontSize: 14px;
   color: ${props => props.day === 0 ? "#e67639" : props.day === 6 ? "#5872d1" : "#2b2b2b"};
 `;

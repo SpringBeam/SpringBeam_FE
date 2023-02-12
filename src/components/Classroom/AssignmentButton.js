@@ -22,7 +22,7 @@ export default AssignmentButton = () => {
 }
 
 const ButtonSection = styled.TouchableOpacity`
-  marginHorizontal: 20px;
+  marginHorizontal: 10px;
   backgroundColor: white;
   display: flex;
   flexDirection: column;

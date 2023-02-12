@@ -103,8 +103,8 @@ const CalendarFrame = styled.FlatList`
 `;
 
 const CalendarDaySection = styled.TouchableOpacity`
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   justifyContent: center;
   alignItems: center;
   backgroundColor: ${props => props.isSelected ? "yellow" : "transparent"}
@@ -112,7 +112,7 @@ const CalendarDaySection = styled.TouchableOpacity`
 `;
 
 const DayText = styled.Text`
-  fontSize: 12px;
+  fontSize: 14px;
   color: ${props => props.day === 0 ? "#e67639" : props.day === 6 ? "#5872d1" : "#2b2b2b"};
   opacity: ${props => props.isCurrentMonth ? 1 : 0.3 };
 `;
