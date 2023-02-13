@@ -10,15 +10,16 @@ export default RootNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="ClassroomScreen"
-        component={ClassroomScreen}
-        options={{ headerShown: true }}
-      />
-      <Stack.Screen
         name="HomeScreenNavigator"
         component={HomeScreen}
         options={{ headerShown: false }}
       />
+      <Stack.Screen
+        name="ClassroomScreen"
+        component={ClassroomScreen}
+        options={{ headerShown: false }}
+      />
+
       <Stack.Screen
         name="LoginScreen"
         component={LoginScreen}
