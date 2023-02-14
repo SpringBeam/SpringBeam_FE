@@ -7,14 +7,12 @@ import { FontAwesome } from "@expo/vector-icons";
 
 // 헤더 컴포넌트
 export default Header = (props) => {
-  const { navigate } = props.navigation;
+  const { navigate, goBack } = props.navigation;
 
   return (
     <HeaderView>
       <TouchableArea
-        onPress={() => {
-          navigate(props.back);
-        }}
+        onPress={() => {props.back === "parent" ? goBack() : navigate(props.back)}}
       >
         <FontAwesome name="arrow-left" size={22} color="#fff" />
       </TouchableArea>
@@ -34,22 +32,22 @@ export default Header = (props) => {
 const HeaderView = styled.View`
   width: 100%;
   display: flex;
-  flexdirection: row;
-  backgroundcolor: #0c9bfb;
-  paddingvertical: 15px;
-  paddinghorizontal: 25px;
-  justifycontent: space-between;
-  alignitems: center;
+  flexDirection: row;
+  backgroundColor: #0c9bfb;
+  paddingVertical: 15px;
+  paddingHorizontal: 25px;
+  justifyContent: space-between;
+  alignItems: center;
 `;
 
 const Text = styled.Text`
-  fontsize: 24px;
-  fontweight: 600;
+  fontSize: 24px;
+  fontWeight: 600;
   color: #fff;
 `;
 
 const TouchableArea = styled.TouchableOpacity`
-  acitiveopacity: 0.8;
-  paddinghorizontal: 6px;
-  paddingvertical: 5px;
+  acitiveOpacity: 0.8;
+  paddingHorizontal: 6px;
+  paddingVertical: 5px;
 `;

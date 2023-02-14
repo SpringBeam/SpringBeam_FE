@@ -3,9 +3,13 @@ import styled from "styled-components/native";
 
 import ReviewPreview from "./ReviewPreview";
 
-export default ReviewButton = () => { 
+export default ReviewButton = (props) => { 
+  const { navigate } = props.navigation;
+
   return (
-    <ButtonSection>
+    <ButtonSection
+      onPress={() => {navigate(props.next)}}
+    >
       <ButtonHeaderSection>
         <ButtonHeader>
           복습 관리
