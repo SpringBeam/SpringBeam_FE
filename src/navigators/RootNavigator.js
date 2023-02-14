@@ -2,8 +2,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginScreen from "../screens/LoginScreen";
 import SignUpNavigator from "./SignUpNavigator";
 import TabNavigator from "./TabNavigator";
-import HomeScreen from "../screens/HomeScreen";
-import ClassroomScreen from "../screens/ClassroomScreen";
 const Stack = createNativeStackNavigator();
 
 export default RootNavigator = () => {
