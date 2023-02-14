@@ -1,5 +1,4 @@
 import React from "react";
-import { Text, Button, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StudentData } from "../components/Home/StudentData";
 import Header from "../components/Header";
