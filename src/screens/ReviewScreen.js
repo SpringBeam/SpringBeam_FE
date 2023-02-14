@@ -9,7 +9,7 @@ const View = SafeAreaView;
 export default ReviewScreen = ({ navigation }) => {
   return (
     <View>
-      <Header title="복습장" navigation={navigation} back="parent" />
+      <Header title="복습 노트" navigation={navigation} back="parent" />
 
     </View>
   );
