@@ -25,7 +25,10 @@ export default ClassroomScreen = ({ navigation }) => {
         <Margin size={15} />
         <AssignmentButton />
         <Margin size={15} />
-        <ReviewButton />
+        <ReviewButton 
+          navigation={navigation}
+          next="ReviewNavigator"
+        />
         <Margin size={80} />
       </ScrollView>
     </View>

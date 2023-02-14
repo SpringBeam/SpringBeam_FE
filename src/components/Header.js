@@ -7,12 +7,12 @@ import { FontAwesome } from '@expo/vector-icons';
 
 // 헤더 컴포넌트
 export default Header = (props) => {
-  const { navigate } = props.navigation;
+  const { navigate, goBack } = props.navigation;
 
   return (
     <HeaderView>
       <TouchableArea
-        onPress={()=> {navigate(props.back)}}
+        onPress={() => {props.back === "parent" ? goBack() : navigate(props.back)}}
       >
         <FontAwesome name='arrow-left' size={22} color='#fff'/>
       </TouchableArea>
