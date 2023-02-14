@@ -1,10 +1,11 @@
 import React from "react";
-import { Text, Button, Image } from "react-native";
+import { Text, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import styled from "styled-components";
 import KakaoLoginBtn from "../components/buttons/KakaoLoginBtn";
 import LoginBtn from "../components/buttons/LoginBtn";
 import LoginArea from "../components/Login/LoginArea";
+import MoveButton from "../components/SignUp/MoveButton";
 import Margin from "./../components/Margin";
 
 const View = SafeAreaView;
@@ -22,10 +23,9 @@ export default LoginScreen = ({ navigation }) => {
         <Margin size={20} />
         <Text>아직 수숙관 회원이 아니신가요?</Text>
 
-        <Button
-          title="회원가입 하기"
-          onPress={() => navigation.navigate("SignUpNavigator")}
-        />
+        <SignUpBtn onPress={() => navigation.navigate("SignUpNavigator")}>
+          <BtnText>회원가입 하기</BtnText>
+        </SignUpBtn>
       </Container>
     </View>
   );
@@ -42,4 +42,16 @@ const Container = styled.View`
   display: flex;
 
   align-items: center;
+`;
+
+const SignUpBtn = styled.TouchableOpacity`
+  text-align: center;
+`;
+
+const BtnText = styled.Text`
+  color: #48b8fa;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  margin: 15px;
 `;
