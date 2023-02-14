@@ -17,7 +17,7 @@ export default LoginScreen = ({ navigation }) => {
         <LogoImage source={require("../../assets/logo.png")} />
 
         <LoginArea />
-        <LoginBtn />
+        <LoginBtn navigation={navigation} />
         {/* <KakaoLoginBtn /> */}
         <Image source={require("../../assets/kakao_login_medium_wide.png")} />
         <Margin size={20} />
