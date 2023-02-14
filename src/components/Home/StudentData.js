@@ -8,7 +8,7 @@ export const StudentData = [
   },
   {
     image: "",
-    name: "김철수",
+    name: "박짱구",
     school: "서강중학교",
     grade: "2학년",
   },
