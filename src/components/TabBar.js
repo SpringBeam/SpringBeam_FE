@@ -14,7 +14,7 @@ const TabButton = ({
   isIconIonicons,
 }) => {
   return (
-    <TabNavigator TabBar={(props) => <TabBar {...props} />}>
+    // <TabNavigator TabBar={(props) => <TabBar {...props} />}>
       <TouchableOpacity
         onPress={onPress}
         style={{
@@ -39,7 +39,7 @@ const TabButton = ({
           />
         )}
       </TouchableOpacity>
-    </TabNavigator>
+    // </TabNavigator>
   );
 };
 
