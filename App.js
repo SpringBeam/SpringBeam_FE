@@ -11,6 +11,7 @@ SplashScreen.preventAutoHideAsync();
 
 Font.loadAsync({
   NanumSquareB: require("./src/global/fonts/NanumSquareB.ttf"),
+  NanumSquareEB: require("./src/global/fonts/NanumSquareEB.ttf"),
 });
 
 export default function App() {

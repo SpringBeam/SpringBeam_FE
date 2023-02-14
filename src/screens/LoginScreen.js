@@ -2,7 +2,7 @@ import React from "react";
 import { Text, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import styled from "styled-components";
-import KakaoLoginBtn from "../components/Buttons/KakaoLoginBtn";
+// import KakaoLoginBtn from "../components/Buttons/KakaoLoginBtn";
 import LoginBtn from "../components/Buttons/LoginBtn";
 import LoginArea from "../components/Login/LoginArea";
 import MoveButton from "../components/SignUp/MoveButton";
@@ -50,7 +50,7 @@ const SignUpBtn = styled.TouchableOpacity`
 const BtnText = styled.Text`
   color: #48b8fa;
   font-weight: 100;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 19px;
   margin: 15px;
   font-family: "NanumSquareB";
