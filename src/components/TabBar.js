@@ -14,30 +14,32 @@ const TabButton = ({
   isIconIonicons,
 }) => {
   return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        paddingVertical: 10,
-      }}
-    >
-      {isIconFontisto && (
-        <Fontisto
-          name={isSelected ? activeIconName : inactiveIconName}
-          size={24}
-          color="black"
-        />
-      )}
-      {isIconIonicons && (
-        <Ionicons
-          name={isSelected ? activeIconName : inactiveIconName}
-          size={24}
-          color="black"
-        />
-      )}
-    </TouchableOpacity>
+    <TabNavigator TabBar={(props) => <TabBar {...props} />}>
+      <TouchableOpacity
+        onPress={onPress}
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          paddingVertical: 10,
+        }}
+      >
+        {isIconFontisto && (
+          <Fontisto
+            name={isSelected ? activeIconName : inactiveIconName}
+            size={24}
+            color="black"
+          />
+        )}
+        {isIconIonicons && (
+          <Ionicons
+            name={isSelected ? activeIconName : inactiveIconName}
+            size={24}
+            color="black"
+          />
+        )}
+      </TouchableOpacity>
+    </TabNavigator>
   );
 };
 
