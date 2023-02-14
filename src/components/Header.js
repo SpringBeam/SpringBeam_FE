@@ -35,7 +35,7 @@ const HeaderView = styled.View`
   flexDirection: row;
   backgroundColor: #0c9bfb;
   paddingVertical: 15px;
-  paddingHorizontal: 25px;
+  paddingHorizontal: 15px;
   justifyContent: space-between;
   alignItems: center;
 `;
