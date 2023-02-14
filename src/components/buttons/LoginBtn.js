@@ -1,19 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 
-export default LoginBtn = () => {
+export default LoginBtn = ({ navigation }) => {
   const onPressHandler = () => {
     console.log("버튼 눌림");
-    navigation.navigate("HomeScreenNavigator");
+    navigation.navigate("TabNavigator");
   };
   return (
-    <Button onPress={() => onPressHandler()}>
-      <Text>로그인</Text>
-    </Button>
+    <BtnContainer onPress={() => onPressHandler()}>
+      <BtnText>로그인</BtnText>
+    </BtnContainer>
   );
 };
 
-const Button = styled.View`
+const BtnContainer = styled.TouchableOpacity`
   color: white;
   background-color: #0c9bfb;
   border-radius: 12px;
@@ -30,7 +30,7 @@ const Button = styled.View`
   margin-bottom: 10px;
 `;
 
-const Text = styled.Text`
+const BtnText = styled.Text`
   font-weight: 500;
   font-size: 16px;
   color: #ffffff;
