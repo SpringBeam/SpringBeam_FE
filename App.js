@@ -1,13 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 import { Provider } from "react-redux";
-import { NavigationContainer } from '@react-navigation/native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import * as SplashScreen from 'expo-splash-screen';
+import { NavigationContainer } from "@react-navigation/native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import * as SplashScreen from "expo-splash-screen";
 import store from "./src/store/store";
-
-import RootNavigator from './src/navigators/RootNavigator';
+import * as Font from "expo-font";
+import RootNavigator from "./src/navigators/RootNavigator";
 
 SplashScreen.preventAutoHideAsync();
+
+Font.loadAsync({
+  NanumSquareB: require("./src/global/fonts/NanumSquareB.ttf"),
+});
 
 export default function App() {
   useEffect(() => {
@@ -15,7 +19,6 @@ export default function App() {
       SplashScreen.hideAsync();
     }, 2000);
   }, []);
-
 
   return (
     <SafeAreaProvider>
