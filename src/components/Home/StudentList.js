@@ -34,13 +34,11 @@ export default (props) => {
   );
 };
 const Container = styled.View`
-  width: 360px;
-  height: 80px;
-
   background: #ffffff;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   margin: 15px;
+  padding: 5px;
   flex-direction: row;
 
   align-items: center;
