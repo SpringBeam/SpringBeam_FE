@@ -11,34 +11,22 @@ import Margin from "../components/Margin";
 
 const View = SafeAreaView;
 
-export default ClassroomScreen = ({navigation}) => {
+export default ClassroomScreen = ({ navigation }) => {
   return (
     <View>
       {/* 헤더 부분 (고정) */}
-      <Header 
-        title="일정 관리"
-        navigation={navigation}
-        back="SelectScreen"
-      />
+      <Header title="일정 관리" navigation={navigation} back="SelectScreen" />
 
       {/* 콘텐츠 부분 (스크롤 가능) */}
       <ScrollView>
         <StudentProfile />
-        <Margin
-          size={15}
-        />
+        <Margin size={15} />
         <Calendar />
-        <Margin
-          size={15}
-        />
+        <Margin size={15} />
         <AssignmentButton />
-        <Margin
-          size={15}
-        />
+        <Margin size={15} />
         <ReviewButton />
-        <Margin
-          size={80}
-        />
+        <Margin size={80} />
       </ScrollView>
     </View>
   );
