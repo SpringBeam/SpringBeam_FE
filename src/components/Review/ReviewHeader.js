@@ -20,4 +20,5 @@ const HeaderText = styled.Text`
   fontWeight: 600;
   textAlign: left;
   color: #0C9BFB;
+  fontFamily: "NanumSquareEB";
 `;
