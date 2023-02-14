@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components/native";
 import dayjs from "dayjs";
 
+import ReviewCheckBox from "../../components/Review/CheckButton";
+
 import { useCalendar } from "../../hooks/useCalendar";
 import { useReviewList } from "../../hooks/useReviewList";
 
@@ -19,7 +21,7 @@ export default ReviewListContainer = () => {
           return (
             <ReviewContainer>
               <ReviewText>{review.content}</ReviewText>
-              {/* <ReviewCheckBox /> */}
+              <ReviewCheckBox />
             </ReviewContainer>
           )
         }}
@@ -39,6 +41,7 @@ const ReviewContainer = styled.View`
   display: flex;
   flexDirection: row;
   justifyContent: space-between;
+  paddingVertical: 15px;
 `;
 
 const ReviewText = styled.Text`
