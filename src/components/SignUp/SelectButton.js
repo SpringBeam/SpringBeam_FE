@@ -90,7 +90,7 @@ const TextBorder = styled.View`
 const Text = styled.Text`
   fontSize: 22px;
   lineHeight: 30px;
-  fontWeight: 700;
+  fontFamily: "ExtraBold";
   color: ${props => props.selected ? "#fff" : "grey"};
 `;
 

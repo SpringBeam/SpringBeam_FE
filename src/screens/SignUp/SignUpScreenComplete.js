@@ -6,6 +6,7 @@ import Header from "../../components/Header";
 import Margin from "../../components/Margin";
 import SignUpComplete from "../../components/SignUp/SignUpComplete";
 import SignUpButton from "../../components/SignUp/SignUpButton";
+import SignUpInvite from "../../components/SignUp/SignUpInvite";
 
 const View = SafeAreaView;
 
@@ -25,6 +26,8 @@ export default SignUpScreenComplete = ({ navigation }) => {
           text={"이메일 다시 등록하기"}
         />
       </ButtonSection>
+      <Margin size={10} />
+      <SignUpInvite />
     </View>
   );
 };
