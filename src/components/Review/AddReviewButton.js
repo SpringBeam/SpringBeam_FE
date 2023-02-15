@@ -15,7 +15,7 @@ export default AddReviewButton = ({navigation}) => {
         onPress={onPressAdd}
       >
         <Button>
-          <FontAwesome5 name="pencil-alt" size={20} color="black" />
+          <FontAwesome5 name="pencil-alt" size={20} color="#0c9bfb" />
         </Button>
       </ButtonFrame>
     </ButtonSection>

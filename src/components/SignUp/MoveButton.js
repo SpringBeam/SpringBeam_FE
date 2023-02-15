@@ -44,7 +44,7 @@ const Button = styled.View`
 `;
 
 const Text = styled.Text`
-  fontweight: 600;
+  fontFamily: "ExtraBold";
   fontsize: 16px;
   lineheight: 20px;
   color: ${(props) => (props.role === "next" ? "#fff" : "#818181")};
