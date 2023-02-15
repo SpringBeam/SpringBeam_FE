@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import styled from "styled-components/native";
 
-import { FontAwesome } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
 
 export default AddReviewButton = ({navigation}) => {
 
@@ -15,7 +15,7 @@ export default AddReviewButton = ({navigation}) => {
         onPress={onPressAdd}
       >
         <Button>
-          <FontAwesome name="arrow-left" size={22} color="#fff" />
+          <FontAwesome5 name="pencil-alt" size={20} color="black" />
         </Button>
       </ButtonFrame>
     </ButtonSection>
@@ -24,8 +24,8 @@ export default AddReviewButton = ({navigation}) => {
 
 const ButtonSection = styled.View`
   position: absolute;
-  right: 15px;
-  bottom: 24px;
+  top: 90px;
+  right: 0px;
 `;
 
 const ButtonFrame = styled.TouchableOpacity`
@@ -35,8 +35,6 @@ const ButtonFrame = styled.TouchableOpacity`
 const Button = styled.View`
   width: 60px;
   height: 60px;
-  backgroundColor: black;
-  borderRadius 30px;
   alignItems: center;
   justifyContent: center;
 `;

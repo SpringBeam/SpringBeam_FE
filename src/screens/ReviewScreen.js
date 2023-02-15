@@ -25,6 +25,9 @@ export default ReviewScreen = ({ navigation }) => {
         />
       <Margin size={10} />
       <ReviewListContainer/>
+      <ReviewListContainer/>
+      <ReviewListContainer/>
+      <ReviewListContainer/>
       <AddReviewButton
         navigation={navigation}
       />
