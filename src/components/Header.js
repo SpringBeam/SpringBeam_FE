@@ -33,7 +33,7 @@ const HeaderView = styled.View`
   width: 100%;
   display: flex;
   flexDirection: row;
-  backgroundColor: #0c9bfb;
+  backgroundColor: ${(props) => props.theme['blue_100']};
   paddingVertical: 15px;
   paddingHorizontal: 15px;
   justifyContent: space-between;
