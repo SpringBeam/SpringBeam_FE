@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import ReviewScreen from "../screens/ReviewScreen";
-import AddReviewScreen from "../screens/AddReviewScreen";
+import ReviewScreen from "../screens/Review/ReviewScreen";
+import AddReviewScreen from "../screens/Review/AddReviewScreen";
 
 const Stack = createNativeStackNavigator();
 

@@ -1,8 +1,8 @@
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import Header from "../components/Header";
-import Margin from "../components/Margin";
+import Header from "../../components/Header";
+import Margin from "../../components/Margin";
 
 const View = SafeAreaView;
 
