@@ -53,5 +53,5 @@ const BtnText = styled.Text`
   font-size: 15px;
   line-height: 19px;
   margin: 15px;
-  font-family: "NanumSquareB";
+  font-family: "Medium";
 `;

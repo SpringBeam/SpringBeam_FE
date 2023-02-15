@@ -4,7 +4,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import Header from "../../components/Header";
 import Margin from "../../components/Margin";
-import MoveButton from "../../components/SignUp/MoveButton";
+import SignUpComplete from "../../components/SignUp/SignUpComplete";
+import SignUpButton from "../../components/SignUp/SignUpButton";
 
 const View = SafeAreaView;
 
@@ -16,19 +17,12 @@ export default SignUpScreenComplete = ({ navigation }) => {
         navigation={navigation}
         back="LoginScreen"
       />
-      <Margin
-        size={10}
-      />
-      <Margin
-        size={10}
-      />
-      \
+      <Margin size={100} />
+      <SignUpComplete/>
+      <Margin size={100} />
       <ButtonSection>
-        <MoveButton
-          role="next"
-          text="다음"
-          navigation={navigation}
-          address="LoginScreen"
+        <SignUpButton
+          text={"이메일 다시 등록하기"}
         />
       </ButtonSection>
     </View>
@@ -36,10 +30,8 @@ export default SignUpScreenComplete = ({ navigation }) => {
 };
 
 const ButtonSection = styled.View`
-  display: flex;
-  flexDirection: row;
   marginVertical: 0;
   marginHorizontal: 0;
   paddingVertical: 0;
-  paddingHorizontal: 10px; 
-`;
+  paddingHorizontal: 15px; 
+`;  
