@@ -18,9 +18,9 @@ export default TabNavigator = () => {
           headerShown: false,
           tabBarIcon: ({ focused }) =>
             !focused ? (
-              <FontAwesome name="list-ul" size={24} color="#BDBDBD" />
+              <FontAwesome name="list-ul" size={24} color="#e0e0e0" />
             ) : (
-              <FontAwesome name="list-ul" size={24} color="black" />
+              <FontAwesome name="list-ul" size={24} color="#0c9bfb" />
             ),
         }}
       />
@@ -32,9 +32,9 @@ export default TabNavigator = () => {
           headerShown: false,
           tabBarIcon: ({ focused }) =>
             !focused ? (
-              <FontAwesome name="address-book" size={24} color="#BDBDBD" />
+              <FontAwesome name="address-book" size={24} color="#e0e0e0" />
             ) : (
-              <FontAwesome name="address-book" size={24} color="black" />
+              <FontAwesome name="address-book" size={24} color="#0c9bfb" />
             ),
         }}
       />
@@ -45,9 +45,9 @@ export default TabNavigator = () => {
           headerShown: false,
           tabBarIcon: ({ focused }) =>
             !focused ? (
-              <Ionicons name="person-sharp" size={24} color="#BDBDBD" />
+              <Ionicons name="person-sharp" size={24} color="#e0e0e0" />
             ) : (
-              <Ionicons name="person-sharp" size={24} color="black" />
+              <Ionicons name="person-sharp" size={24} color="#0c9bfb" />
             ),
         }}
       />
