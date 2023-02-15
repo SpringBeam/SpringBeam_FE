@@ -44,6 +44,7 @@ const Text = styled.Text`
   fontSize: 24px;
   fontWeight: 600;
   color: #fff;
+  fontFamily: ExtraBold;
 `;
 
 const TouchableArea = styled.TouchableOpacity`

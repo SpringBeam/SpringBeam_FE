@@ -10,8 +10,11 @@ import RootNavigator from "./src/navigators/RootNavigator";
 SplashScreen.preventAutoHideAsync();
 
 Font.loadAsync({
-  NanumSquareB: require("./src/global/fonts/NanumSquareB.ttf"),
-  NanumSquareEB: require("./src/global/fonts/NanumSquareEB.ttf"),
+  Light: require("./src/global/fonts/NanumSquareL.ttf"),
+  Regular: require("./src/global/fonts/NanumSquareR.ttf"),
+  Medium: require("./src/global/fonts/NanumSquare.ttf"),
+  Bold: require("./src/global/fonts/NanumSquareB.ttf"),
+  ExtraBold: require("./src/global/fonts/NanumSquareEB.ttf"),
 });
 
 export default function App() {
