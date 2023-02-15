@@ -46,6 +46,7 @@ const ReviewContainer = styled.View`
 
 const ReviewText = styled.Text`
   fontSize: 18px;
-  fontWeight: 400;
   lineHeight: 24px;
+  fontFamily: "Regular";
+  color: ${(props) => props.theme['grey_300']};
 `;

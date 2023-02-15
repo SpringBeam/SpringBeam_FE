@@ -111,11 +111,14 @@ const Input = styled.TextInput`
   fontSize: 16px;
   paddingVertical: 4px;
   paddingHorizontal: 10px;
+  fontFamily: "Medium";
+  color: ${(props) => props.theme['grey_300']};
 `;
 
 const ErrorText = styled.Text`
   fontSize: 12px;
-  color: #FF0D10;
+  fontFamily: "Regular";
+  color: ${(props) => props.theme['red']};;
   paddingHorizontal: 20px;
   paddingVertical: 0px;
 `;

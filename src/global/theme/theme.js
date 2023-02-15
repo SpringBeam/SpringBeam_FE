@@ -7,6 +7,7 @@ const theme = {
   grey_100: "#bdbdbd",
   grey_200: "#e0e0e0",
   grey_300: "#424242",
+  red: "#FF0D10",
 }
 
 export { theme };

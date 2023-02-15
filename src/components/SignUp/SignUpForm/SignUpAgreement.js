@@ -101,18 +101,18 @@ const ContentSection = styled.View`
 
 const HighlightTextRequired = styled.Text`
   fontSize: 16px;
-  color: #0C9BFB;
-  fontWeight: 500;
+  color: ${(props) => props.theme['blue_100']};
+  fontFamily: "Bold";
 `;
 
 const HighlightTextOptional = styled.Text`
   fontSize: 16px;
-  color: #818181;
-  fontWeight: 500;
+  color: ${(props) => props.theme['grey_100']};
+  fontFamily: "Bold";
 `;
 
 const ContentText = styled.Text`
   fontSize: 16px;
-  color: #818181;
-  fontWeight: 400;
+  color: ${(props) => props.theme['grey_300']};
+  fontFamily: "Regular";
 `;

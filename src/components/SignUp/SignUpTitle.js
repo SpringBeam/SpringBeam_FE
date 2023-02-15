@@ -18,6 +18,6 @@ const TitleSection = styled.View`
 
 const Title = styled.Text`
   fontSize: 30px;
-  fontWeight: 600;
-  color: #818181;
+  fontFamily: "ExtraBold";
+  color: ${(props) => props.theme['grey_300']};
 `;

@@ -1,11 +1,11 @@
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import Header from "../components/Header";
-import Margin from "../components/Margin";
-import ReviewHeader from "../components/Review/ReviewHeader";
-import ReviewListContainer from "../components/Review/ReviewListContainer";
-import AddReviewButton from "../components/Review/AddReviewButton";
+import Header from "../../components/Header";
+import Margin from "../../components/Margin";
+import ReviewHeader from "../../components/Review/ReviewHeader";
+import ReviewListContainer from "../../components/Review/ReviewListContainer";
+import AddReviewButton from "../../components/Review/AddReviewButton";
 
 const View = SafeAreaView;
 
