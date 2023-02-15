@@ -17,8 +17,7 @@ const HeaderSection = styled.View`
 
 const HeaderText = styled.Text`
   fontSize: 20px;
-  fontWeight: 600;
   textAlign: left;
-  color: #0C9BFB;
-  fontFamily: "NanumSquareEB";
+  color: ${(props) => props.theme['blue_100']};
+  fontFamily: "ExtraBold";
 `;
