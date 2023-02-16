@@ -1,36 +1,55 @@
 import React from "react";
-import { ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
 import Header from "../components/Header";
 import StudentProfile from "../components/Classroom/StudentProfile";
 import Calendar from "../components/Calendar/Calendar";
-import AssignmentButton from "../components/Classroom/AssignmentButton";
-import ReviewButton from "../components/Classroom/ReviewButton";
 import Margin from "../components/Margin";
-
+import AssignmentNoteBtn from "../components/Classroom/AssignmentNoteBtn";
+import styled from "styled-components";
 const View = SafeAreaView;
 
 export default ClassroomScreen = ({ navigation }) => {
+  const onPressHandler = () => {
+    console.log("버튼 눌림");
+    navigation.navigate("ReviewNavigator");
+  };
   return (
     <View>
-      {/* 헤더 부분 (고정) */}
       <Header title="일정 관리" navigation={navigation} back="SelectScreen" />
 
-      {/* 콘텐츠 부분 (스크롤 가능) */}
-      <ScrollView>
-        <StudentProfile />
-        <Margin size={15} />
-        <Calendar />
-        <Margin size={15} />
-        <AssignmentButton />
-        <Margin size={15} />
-        <ReviewButton 
-          navigation={navigation}
-          next="ReviewNavigator"
-        />
-        <Margin size={80} />
-      </ScrollView>
+      <StudentProfile />
+      <Calendar />
+      <BtnView>
+        <BtnContainer onPress={() => onPressHandler()}>
+          <BtnText>복습노트</BtnText>
+        </BtnContainer>
+        <BtnContainer onPress={() => onPressHandler()}>
+          <BtnText>숙제노트</BtnText>
+        </BtnContainer>
+      </BtnView>
     </View>
   );
 };
+const BtnContainer = styled.TouchableOpacity`
+  color: white;
+  background-color: #0c9bfb;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+
+  width: 50%;
+`;
+
+const BtnText = styled.Text`
+  font-weight: 500;
+  font-size: 25px;
+  color: #ffffff;
+`;
+
+const BtnView = styled.View`
+  flex-direction: row;
+  margin: 15px;
+`;
