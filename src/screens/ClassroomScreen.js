@@ -4,7 +4,6 @@ import Header from "../components/Header";
 import StudentProfile from "../components/Classroom/StudentProfile";
 import Calendar from "../components/Calendar/Calendar";
 import Margin from "../components/Margin";
-import AssignmentNoteBtn from "../components/Classroom/AssignmentNoteBtn";
 import styled from "styled-components";
 const View = SafeAreaView;
 
@@ -15,7 +14,7 @@ export default ClassroomScreen = ({ navigation }) => {
   };
   return (
     <View>
-      <Header title="일정 관리" navigation={navigation} back="SelectScreen" />
+      <Header title="강의실" navigation={navigation} back="SelectScreen" />
 
       <StudentProfile />
       <Calendar />
