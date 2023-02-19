@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components/native";
 
-export default AssignmentNoteBtn = () => {
+export default NoteBtn = (props) => {
   return (
     <View>
-      <NoteBtn>
+      <NoteBtnContainer>
         <Text>숙제노트</Text>
-      </NoteBtn>
+      </NoteBtnContainer>
       <Margin size={10} />
     </View>
   );
@@ -20,7 +20,7 @@ const View = styled.View`
   justify-content: space-between;
 `;
 
-const NoteBtn = styled.TouchableOpacity`
+const NoteBtnContainer = styled.TouchableOpacity`
   color: white;
   background-color: #0c9bfb;
   border-radius: 12px;
