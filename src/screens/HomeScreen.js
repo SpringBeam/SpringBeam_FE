@@ -1,5 +1,6 @@
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+
 import { StudentData } from "../components/Home/StudentData";
 import Header from "../components/Header";
 import Margin from "../components/Margin";
