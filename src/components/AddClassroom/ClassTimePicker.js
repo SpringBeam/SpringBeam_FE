@@ -14,7 +14,6 @@ export default ClassTimePicker = (props) => {
   };
 
   const handleConfirm = (time) => {
-    console.log(time.toTimeString());
     props.setTime(time.toTimeString());
     hideDatePicker();
   };
@@ -37,13 +36,20 @@ export default ClassTimePicker = (props) => {
 };
 
 const PickerContainer = styled.View`
-
 `;
 
 const Button = styled.TouchableOpacity`
-
+  paddingVertical: 10px;
+  paddingHorizontal: 12px;
+  backgroundColor: ${(props) => props.theme['blue_100']};
+  border: 1px solid ${(props) => props.theme['blue_100']};
+  borderRadius: 12px;
+  alignItems: center;
 `;
 
 const ButtonText = styled.Text`
-
+  fontSize: 16px;
+  lineHeight: 20px;
+  fontFamily: "ExtraBold";
+  color: ${(props) => props.theme['white']};
 `;
