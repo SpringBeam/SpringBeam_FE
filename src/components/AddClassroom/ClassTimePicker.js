@@ -14,7 +14,8 @@ export default ClassTimePicker = (props) => {
   };
 
   const handleConfirm = (time) => {
-    props.setTime(time.toTimeString());
+    const selectedTime = time.toTimeString().substr(0, 5);
+    props.setTime(selectedTime);
     hideDatePicker();
   };
 
