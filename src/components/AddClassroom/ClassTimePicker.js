@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components/native";
 import DateTimePicker from "react-native-modal-datetime-picker";
 
-export default ClassTimePicker = () => {
+export default ClassTimePicker = (props) => {
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
 
   const showDatePicker = () => {
@@ -13,17 +13,23 @@ export default ClassTimePicker = () => {
     setDatePickerVisibility(false);
   };
 
+  const handleConfirm = (time) => {
+    console.log(time.toTimeString());
+    props.setTime(time.toTimeString());
+    hideDatePicker();
+  };
+
   return (
     <PickerContainer>
       <Button onPress={showDatePicker}>
         <ButtonText>
-          눌러
+          {props.text}
         </ButtonText>
       </Button>
       <DateTimePicker
         isVisible={isDatePickerVisible}
         mode="time"
-        // onConfirm={<></>}
+        onConfirm={handleConfirm}
         onCancel={hideDatePicker}
       />
     </PickerContainer>

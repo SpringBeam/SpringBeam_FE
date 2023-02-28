@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import Header from "../components/Header";
 import Margin from "../components/Margin";
-import ClassTimePicker from "../components/AddClassroom/ClassTimePicker";
+import AddClassForm from "../components/AddClassroom/AddClassForm";
 
 const View = SafeAreaView;
 
@@ -13,7 +13,7 @@ export default AddClassroomScreen = ({ navigation }) => {
     <View>
       <Header title="수업 추가" navigation={navigation} back="parent"/>
       <Margin size={10} />
-      <ClassTimePicker />
+      <AddClassForm />
     </View>
   );
 };
