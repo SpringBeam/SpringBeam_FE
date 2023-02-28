@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components/native";
 
+import DayPicker from "./DayPicker";
 import SubjectPicker from "./SubjectPicker";
 import ClassTimePicker from "./ClassTimePicker";
 
@@ -17,6 +18,7 @@ export default AddClassForm = () => {
   return (
     <FormContainer>
       <SubjectPicker subject={subject} setSubject={setSubject}/>
+      <DayPicker />
       {startTime && (
         <Temp>
           {startTime}
@@ -36,7 +38,6 @@ export default AddClassForm = () => {
 };
 
 const FormContainer = styled.View`
-  alignItems: center;
   marginHorizontal: 10px;
 `;
 
@@ -47,7 +48,6 @@ const Temp = styled.Text`
 `;
 
 const ButtonContainer = styled.View`
-  width: 80%;
   display: flex;
   flexDirection: row;
   justifyContent: space-between;
