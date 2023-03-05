@@ -1,40 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Button } from "react-native";
 import styled from "styled-components/native";
-import { FontAwesome } from '@expo/vector-icons';
 
 import SubTitle from "../Typography/SubTitle";
 import Margin from "../Margin";
-import DayPicker from "./DayPicker";
 import SubjectPicker from "./SubjectPicker";
+import DayPicker from "./DayPicker";
+import AddDate from "./AddDate";
 import { createClassAPI } from "../../apis/Class";
 
 export default AddClassForm = () => {
-  const daysArray = ["월", "화", "수", "목", "금", "토", "일"];
   const [ subject, setSubject ] = useState("");
   const [ selectedDay, setSelectedDay ] = useState("");
   const [ startTime, setStartTime ] = useState("");
   const [ endTime, setEndTime ] = useState("");
-  const [ totalDate, setTotalDate ] = useState("");
-  const [ newDate, setNewDate ] = useState("");
-
-  const addDate = () => {
-    const i = daysArray.indexOf(selectedDay) + 1;
-    const temp = i + ' ' + startTime + ' ' + endTime;
-    setNewDate(temp);
-    setSelectedDay("");
-    setStartTime("");
-    setEndTime("");
-  }
-
-  useEffect(() => {
-    setTotalDate([totalDate, newDate].join(' '));
-  }, [newDate]);
+  const [ totalDate, setTotalDate ] = useState([]);
 
   const createForm = () => {
+    const stringDate = totalDate.join(' ');
+
     const body = {
       "subject": subject,
-      "dayTime": totalDate.trim(),
+      "dayTime": stringDate.trim(),
       "startDate": "2023-03-06"
     }
     console.log(body)
@@ -55,32 +42,21 @@ export default AddClassForm = () => {
       <Margin size={10} />
       <SubTitle text='2. 수업 요일 설정'/>
       <Margin size={10} />
-      <DayPicker setSelectedDay={setSelectedDay} setStartTime={setStartTime} setEndTime={setEndTime}/>
+      <DayPicker 
+        setSelectedDay={setSelectedDay} 
+        setStartTime={setStartTime} 
+        setEndTime={setEndTime}
+      />
       <Margin size={10} />
-      <DayTimeContainer>
-        <TextContainer>
-          {selectedDay && (
-            <TimeText>
-              {selectedDay}
-            </TimeText>
-          )}
-          {startTime && (
-            <TimeText>
-              {startTime}
-            </TimeText>
-          )}
-          {endTime && (
-            <TimeText>
-              {endTime}
-            </TimeText>
-          )}
-        </TextContainer>
-        {selectedDay && startTime && endTime && (
-          <AddButton onPress={() => addDate()}>
-            <FontAwesome name="plus" size={14} color="#fff" />
-          </AddButton>
-        )}
-      </DayTimeContainer>
+      <AddDate 
+        selectedDay={selectedDay} 
+        startTime={startTime} 
+        endTime={endTime} 
+        setSelectedDay={setSelectedDay} 
+        setStartTime={setStartTime} 
+        setEndTime={setEndTime}
+        setTotalDate={setTotalDate}
+      />
       <Margin size={10} />
       <SubTitle text='3. 시작일 설정'/>
       <Margin size={30} />
