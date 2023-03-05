@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components/native";
 import { FontAwesome } from '@expo/vector-icons';
 
-const selectedDates = [];
 export default AddDate = ({
   selectedDay, 
   startTime, 
@@ -10,6 +9,7 @@ export default AddDate = ({
   setSelectedDay, 
   setStartTime, 
   setEndTime,
+  totalDate,
   setTotalDate
 }) => {
   const daysArray = ["월", "화", "수", "목", "금", "토", "일"];
@@ -22,12 +22,13 @@ export default AddDate = ({
     setSelectedDay("");
     setStartTime("");
     setEndTime("");
-    selectedDates.push(newDate);
-  }
+  };
 
   useEffect(()=>{
-    setTotalDate(selectedDates);
-  }, [selectedDates]);
+    let newArr = [...totalDate];
+    newArr.push(newDate);
+    setTotalDate(newArr);
+  }, [newDate, setNewDate]);
 
   return (
     <DayTimeContainer>

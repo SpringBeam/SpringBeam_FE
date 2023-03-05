@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "react-native";
 import styled from "styled-components/native";
 
@@ -15,8 +15,8 @@ export default AddClassForm = () => {
   const [ selectedDay, setSelectedDay ] = useState("");
   const [ startTime, setStartTime ] = useState("");
   const [ endTime, setEndTime ] = useState("");
-  const [ totalDate, setTotalDate ] = useState([]);
   const [ startDate, setStartDate ] = useState("");
+  const [ totalDate, setTotalDate ] = useState([""]);
 
   const createForm = () => {
     const stringDate = totalDate.join(" ");
@@ -24,7 +24,7 @@ export default AddClassForm = () => {
     const body = {
       "subject": subject,
       "dayTime": stringDate.trim(),
-      "startDate": "2023-03-06"
+      "startDate": startDate
     }
     console.log(body)
     createClassAPI(body)
@@ -52,12 +52,13 @@ export default AddClassForm = () => {
       />
       <Margin size={10} />
       <AddDate 
-        selectedDay={selectedDay} 
+        selectedDay={selectedDay}
         startTime={startTime} 
         endTime={endTime} 
         setSelectedDay={setSelectedDay} 
         setStartTime={setStartTime} 
         setEndTime={setEndTime}
+        totalDate={totalDate}
         setTotalDate={setTotalDate}
       />
       <Margin size={10} />
