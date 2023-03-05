@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { Button, Text } from "react-native";
 import styled from "styled-components/native";
 
 import DayPicker from "./DayPicker";
 import SubjectPicker from "./SubjectPicker";
 import ClassTimePicker from "./ClassTimePicker";
+import { createClassAPI } from "../../apis/Class";
 
 export default AddClassForm = () => {
 
@@ -14,6 +16,22 @@ export default AddClassForm = () => {
   useEffect(() => {
     console.log(startTime, endTime);
   }, [startTime, endTime]);
+
+  const body = {
+    "subject": "사문 및 생윤",
+    "dayTime": "1 20:40 22:50",
+    "startDate": "2023-03-06"
+  }
+
+  const createForm = (body) => {
+    createClassAPI(body)
+      .then((res) =>{
+        console.log(res.data);
+      })
+      .catch((error) => {
+        console.log('안 돼용!', error.message)
+      });
+  };
 
   return (
     <FormContainer>
@@ -33,6 +51,10 @@ export default AddClassForm = () => {
         <ClassTimePicker text="시작시간" setTime={setStartTime}/>
         <ClassTimePicker text="종료시간" setTime={setEndTime}/>
       </ButtonContainer>
+      <Button
+        title="되냐"
+        onPress={()=>createForm(body)}
+      />
     </FormContainer>
   )
 };
