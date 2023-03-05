@@ -17,7 +17,7 @@ export default SubjectPicker = (props) => {
         { label: "과학", value: "과학", key: "3"},
         { label: "사회", value: "사회", key: "4"},
         { label: "물리", value: "물리", key: "5"},
-        { label: "화학", value: "화학 ", key: "6"},
+        { label: "화학", value: "화학", key: "6"},
         { label: "생명과학", value: "생명과학", key: "7"},
         { label: "논술", value: "논술", key: "8"},
         { label: "중국어", value: "중국어", key: "9"},

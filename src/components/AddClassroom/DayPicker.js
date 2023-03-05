@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components/native";
 
-export default DayPicker = () => {
+import Margin from "../Margin";
+import ClassTimePicker from "./ClassTimePicker";
+
+export default DayPicker = ({setSelectedDay, setStartTime, setEndTime}) => {
+
+  const [ isClicked, setIsClicked ] = useState(false);
+
+  const handleClick = (day) => {
+    setSelectedDay(day);
+    setIsClicked(true);
+  };
 
   const days = ["월", "화", "수", "목", "금", "토", "일"];
 
   const dayList = days.map((day, index) => (
-    <DayButton key={index}>
+    <DayButton key={index} onPress={() => handleClick(day)}>
       <ButtonText>
         {day}
       </ButtonText>
@@ -14,17 +24,36 @@ export default DayPicker = () => {
   ))
 
   return (
+    <Wrapper>
     <PickerContainer>
       {dayList}
     </PickerContainer>
+    <Margin size={10}/>
+    { isClicked && (
+      <TimeButtonContainer>
+        <ClassTimePicker text="시작시간" setTime={setStartTime}/>
+        <ClassTimePicker text="종료시간" setTime={setEndTime}/>
+      </TimeButtonContainer>
+    )}
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.View`
+  display: flex;
+  flexDirection: column;
+`;
 
 const PickerContainer = styled.View`
   display: flex;
   flexDirection: row;
   justifyContent: space-between;
-  alignItems: space-between;
+`;
+
+const TimeButtonContainer = styled.View`
+  display: flex;
+  flexDirection: row;
+  justifyContent: space-between;
 `;
 
 const DayButton = styled.TouchableOpacity`
