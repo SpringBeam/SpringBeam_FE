@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "react-native";
 import styled from "styled-components/native";
-
 import { FontAwesome } from '@expo/vector-icons';
 
+import SubTitle from "../Typography/SubTitle";
 import Margin from "../Margin";
 import DayPicker from "./DayPicker";
 import SubjectPicker from "./SubjectPicker";
-import ClassTimePicker from "./ClassTimePicker";
 import { createClassAPI } from "../../apis/Class";
 
 export default AddClassForm = () => {
@@ -50,11 +49,14 @@ export default AddClassForm = () => {
 
   return (
     <FormContainer>
-      <Margin size={30} />
+      <Margin size={10} />
+      <SubTitle text='1. 수업 과목 선택'/>
       <SubjectPicker subject={subject} setSubject={setSubject}/>
-      <Margin size={30} />
+      <Margin size={10} />
+      <SubTitle text='2. 수업 요일 설정'/>
+      <Margin size={10} />
       <DayPicker setSelectedDay={setSelectedDay} setStartTime={setStartTime} setEndTime={setEndTime}/>
-      <Margin size={30} />
+      <Margin size={10} />
       <DayTimeContainer>
         <TextContainer>
           {selectedDay && (
@@ -75,10 +77,12 @@ export default AddClassForm = () => {
         </TextContainer>
         {selectedDay && startTime && endTime && (
           <AddButton onPress={() => addDate()}>
-            <FontAwesome name="plus" size={20} color="#fff" />
+            <FontAwesome name="plus" size={14} color="#fff" />
           </AddButton>
         )}
       </DayTimeContainer>
+      <Margin size={10} />
+      <SubTitle text='3. 시작일 설정'/>
       <Margin size={30} />
       <Button
         title="되냐"
@@ -106,8 +110,8 @@ const TextContainer = styled.View`
 
 const TimeText = styled.Text`
   margin: 10px;
-  fontSize: 16px;
-  color: red;
+  fontSize: 18px;
+  color: ${(props) => props.theme['blue_100']};
 `;
 
 const AddButton = styled.TouchableOpacity`
