@@ -7,6 +7,7 @@ import Margin from "../Margin";
 import SubjectPicker from "./SubjectPicker";
 import DayPicker from "./DayPicker";
 import AddDate from "./AddDate";
+import StartDate from "./StartDate";
 import { createClassAPI } from "../../apis/Class";
 
 export default AddClassForm = () => {
@@ -15,9 +16,10 @@ export default AddClassForm = () => {
   const [ startTime, setStartTime ] = useState("");
   const [ endTime, setEndTime ] = useState("");
   const [ totalDate, setTotalDate ] = useState([]);
+  const [ startDate, setStartDate ] = useState("");
 
   const createForm = () => {
-    const stringDate = totalDate.join(' ');
+    const stringDate = totalDate.join(" ");
 
     const body = {
       "subject": subject,
@@ -30,19 +32,20 @@ export default AddClassForm = () => {
         console.log(res.data);
       })
       .catch((error) => {
-        console.log('안 돼용!', error.message)
+        console.log("안 돼용!", error.message)
       });
   };
 
   return (
     <FormContainer>
       <Margin size={10} />
-      <SubTitle text='1. 수업 과목 선택'/>
+      <SubTitle text="1. 수업 과목 선택"/>
       <SubjectPicker subject={subject} setSubject={setSubject}/>
       <Margin size={10} />
-      <SubTitle text='2. 수업 요일 설정'/>
+      <SubTitle text="2. 수업 요일 설정"/>
       <Margin size={10} />
       <DayPicker 
+        selectedDay={selectedDay}
         setSelectedDay={setSelectedDay} 
         setStartTime={setStartTime} 
         setEndTime={setEndTime}
@@ -58,7 +61,11 @@ export default AddClassForm = () => {
         setTotalDate={setTotalDate}
       />
       <Margin size={10} />
-      <SubTitle text='3. 시작일 설정'/>
+      <SubTitle text="3. 시작일 설정"/>
+      <StartDate
+        text="시작일 설정"
+        setTime={setStartDate}
+      />
       <Margin size={30} />
       <Button
         title="되냐"
@@ -87,13 +94,13 @@ const TextContainer = styled.View`
 const TimeText = styled.Text`
   margin: 10px;
   fontSize: 18px;
-  color: ${(props) => props.theme['blue_100']};
+  color: ${(props) => props.theme["blue_100"]};
 `;
 
 const AddButton = styled.TouchableOpacity`
   paddingVertical: 6px;
   paddingHorizontal: 8px;
-  backgroundColor: ${(props) => props.theme['blue_100']};
+  backgroundColor: ${(props) => props.theme["blue_100"]};
   borderRadius: 300px;
   alignItems: center;
 `;
