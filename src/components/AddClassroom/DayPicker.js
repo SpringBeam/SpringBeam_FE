@@ -4,13 +4,10 @@ import styled from "styled-components/native";
 import Margin from "../Margin";
 import ClassTimePicker from "./ClassTimePicker";
 
-export default DayPicker = ({setSelectedDay, setStartTime, setEndTime}) => {
-
-  const [ isClicked, setIsClicked ] = useState(false);
+export default DayPicker = ({selectedDay, setSelectedDay, setStartTime, setEndTime}) => {
 
   const handleClick = (day) => {
     setSelectedDay(day);
-    setIsClicked(true);
   };
 
   const days = ["월", "화", "수", "목", "금", "토", "일"];
@@ -29,7 +26,7 @@ export default DayPicker = ({setSelectedDay, setStartTime, setEndTime}) => {
       {dayList}
     </PickerContainer>
     <Margin size={10}/>
-    { isClicked && (
+    { selectedDay && (
       <TimeButtonContainer>
         <ClassTimePicker text="시작시간" setTime={setStartTime}/>
         <ClassTimePicker text="종료시간" setTime={setEndTime}/>
