@@ -61,5 +61,5 @@ const ItemContent = styled.Text`
 
 const Separator = styled.View`
   height: 1px;
-  background-color: gray;
+  background-color: ${(props) => props.theme["grey_200"]};
 `;
