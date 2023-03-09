@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 
 export default DateList = ({totalDate}) => {
   const dayList = ["월", "화", "수", "목", "금", "토", "일"];
-  const dateList = totalDate;
+  const dateList = totalDate.filter((item) => item !== "");
 
   console.log(totalDate);
 
@@ -14,10 +14,6 @@ export default DateList = ({totalDate}) => {
     const endTime = array[2];
 
     console.log(totalDate);
-
-    if (!item) {
-      return null;
-    };
 
     return (
       <ListItem>
@@ -40,6 +36,7 @@ export default DateList = ({totalDate}) => {
         data={dateList}
         renderItem={renderItem}
         keyExtractor={(item) => item}
+        ItemSeparatorComponent={() => <Separator />}
       />
     </ListWrapper>
   );
@@ -62,3 +59,7 @@ const ItemContent = styled.Text`
 
 `;
 
+const Separator = styled.View`
+  height: 1px;
+  background-color: gray;
+`;
