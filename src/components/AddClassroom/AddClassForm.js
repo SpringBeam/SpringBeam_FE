@@ -7,6 +7,7 @@ import Margin from "../Margin";
 import SubjectPicker from "./SubjectPicker";
 import DayPicker from "./DayPicker";
 import AddDate from "./AddDate";
+import DateList from "./DateList";
 import StartDate from "./StartDate";
 import { createClassAPI } from "../../apis/Class";
 
@@ -62,6 +63,9 @@ export default AddClassForm = () => {
         setTotalDate={setTotalDate}
       />
       <Margin size={10} />
+      <DateList
+        totalDate={totalDate}
+      />
       <SubTitle text="3. 시작일 설정"/>
       <StartDate
         text="시작일 설정"
