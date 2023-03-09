@@ -66,7 +66,9 @@ export default AddClassForm = () => {
       <DateList
         totalDate={totalDate}
       />
+      <Margin size={10} />
       <SubTitle text="3. 시작일 설정"/>
+      <Margin size={10} />
       <StartDate
         text="시작일 설정"
         setTime={setStartDate}

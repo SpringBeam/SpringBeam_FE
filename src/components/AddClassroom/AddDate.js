@@ -34,19 +34,30 @@ export default AddDate = ({
     <DayTimeContainer>
       <TextContainer>
         {selectedDay && (
-          <TimeText>
-            {selectedDay}
-          </TimeText>
+          <DayText>
+            {selectedDay}요일
+          </DayText>
         )}
         {startTime && (
-          <TimeText>
-            {startTime}
-          </TimeText>
+          <TimeTextContainer>
+            <TimeText>
+              {startTime}
+            </TimeText>
+          </TimeTextContainer>
+        )}
+        {startTime && endTime && (
+          <DateSeparator>
+            <DateSeparatorContent>
+              ~
+            </DateSeparatorContent>
+          </DateSeparator>
         )}
         {endTime && (
-          <TimeText>
-            {endTime}
-          </TimeText>
+          <TimeTextContainer>
+            <TimeText>
+              {endTime}
+            </TimeText>
+          </TimeTextContainer>
         )}
       </TextContainer>
       {selectedDay && startTime && endTime && (
@@ -70,10 +81,37 @@ const TextContainer = styled.View`
   flexDirection: row;
 `;
 
+const DayText = styled.Text`
+  fontSize: 20px;
+  fontFamily: "ExtraBold";
+  paddingRight: 20px;
+  color: ${(props) => props.theme["blue_100"]}
+`;
+
+const TimeTextContainer = styled.View`
+  backgroundColor: ${(props) => props.theme["blue_100"]};
+  borderRadius: 12px;
+  paddingVertical: 5px;
+  paddingHorizontal: 8px;
+`;
+
 const TimeText = styled.Text`
-  margin: 10px;
-  fontSize: 18px;
-  color: ${(props) => props.theme['blue_100']};
+  color: #fff;
+  fontSize: 12px;
+  fontFamily: "Bold";
+`;
+
+const DateSeparator = styled.View`
+  display: flex;
+  flexDirection: column;
+  marginHorizontal: 4px;
+  paddingHorizontal: 4px;
+`;
+
+const DateSeparatorContent = styled.Text`
+  color: ${(props) => props.theme["blue_100"]};
+  fontSize: 20px;
+  fontFamily: "Bold";
 `;
 
 const AddButton = styled.TouchableOpacity`
