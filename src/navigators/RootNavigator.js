@@ -1,5 +1,4 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import AddClassroomScreen from "../screens/AddClassroomScreen";
 import LoginScreen from "../screens/LoginScreen";
 import SignUpNavigator from "./SignUpNavigator";
 import TabNavigator from "./TabNavigator";
@@ -8,11 +7,6 @@ const Stack = createNativeStackNavigator();
 export default RootNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen
-        name="AddClassroomScreen"
-        component={AddClassroomScreen}
-        options={{ headerShown: false }}
-      />
       <Stack.Screen
         name="LoginScreen"
         component={LoginScreen}
