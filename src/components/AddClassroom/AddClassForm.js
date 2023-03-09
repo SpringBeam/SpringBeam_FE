@@ -17,7 +17,7 @@ export default AddClassForm = () => {
   const [ startTime, setStartTime ] = useState("");
   const [ endTime, setEndTime ] = useState("");
   const [ startDate, setStartDate ] = useState("");
-  const [ totalDate, setTotalDate ] = useState([""]);
+  const [ totalDate, setTotalDate ] = useState([]);
 
   const createForm = () => {
     const stringDate = totalDate.join(" ");
