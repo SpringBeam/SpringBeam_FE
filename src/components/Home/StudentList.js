@@ -17,7 +17,7 @@ export default (props) => {
         <View key={index}>
           <Container>
             <IconContainer>
-              <Ionicons name="person-circle-outline" size={56} color="black" />
+              <Ionicons name="person-circle-outline" size={56} color="#424242" />
             </IconContainer>
             <TextContainer>
               <Name>{item.name}</Name>
@@ -25,8 +25,9 @@ export default (props) => {
                 {item.school} {item.grade}
               </Info>
             </TextContainer>
-
-            <AntDesign name="right" size={24} color="black" />
+            <IconContainer>
+              <AntDesign name="right" size={24} color="#424242" />
+            </IconContainer>
           </Container>
         </View>
       ))}
@@ -35,33 +36,35 @@ export default (props) => {
 };
 const Container = styled.View`
   background: #ffffff;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 16px;
-  margin: 15px;
-  padding: 5px;
-  flex-direction: row;
-
-  align-items: center;
+  boxShadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+  borderRadius: 16px;
+  margin: 10px;
+  paddingVertical: 5px;
+  paddingHorizontal: 5px;
+  flexDirection: row;
+  alignItems: center;
 `;
 
 const TextContainer = styled.View`
-  width: 250px;
-  justify-content: center;
+  flex: 1;
+  marginLeft: 10px;
+  justifyContent: center;
 `;
 
 const IconContainer = styled.View`
-  justify-content: center;
-  margin: 5px;
-  margin-right: 10px;
-`;
-const Name = styled.Text`
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 27px;
+  justifyContent: center;
 `;
 
+const Name = styled.Text`
+  color: ${(props) => props.theme["grey_300"]};
+  fontFamily: "ExtraBold";
+  fontSize: 18px;
+  lineHeight: 27px;
+`;
+  
 const Info = styled.Text`
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 20px;
+  color: ${(props) => props.theme["grey_100"]};
+  fontFamily: "Regular";
+  fontSize: 12px;
+  lineHeight: 20px;
 `;
