@@ -10,6 +10,7 @@ import {
 
 export const API = axios.create({});
 
-API.intercepters.request.use(async (res) => {
-  let accessToken = getAccessToken();
-})
+// API.intercepters.request.use(async (res) => {
+//   let accessToken = getAccessToken();
+//   const refreshToken = getRefreshToken();
+// })

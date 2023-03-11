@@ -14,24 +14,25 @@ export default LoginScreen = ({ navigation }) => {
     <View>
       <Container>
         <LogoImage source={require("../../assets/logo.png")} />
-        <Margin size={50} />
+        {/* <LoginArea />
+        <LoginBtn navigation={navigation} /> */}
+        {/* <KakaoLoginBtn /> */}
         <ImageButton>
           <KakaoImage source={require("../../assets/kakao_login_medium_wide.png")} />
         </ImageButton>
+        {/* <Margin size={20} /> */}
+        {/* <Text>아직 수숙관 회원이 아니신가요?</Text>
+        <SignUpBtn onPress={() => navigation.navigate("SignUpNavigator")}>
+          <BtnText>회원가입 하기</BtnText>
+        </SignUpBtn> */}
       </Container>
     </View>
   );
 };
 
-const Container = styled.View`
-  display: flex;
-  height: 100%;
-  justifyContent: center;
-  marginHorizontal: 15px;
-  alignItems: center;
-`;
-
 const LogoImage = styled.Image`
+  margin: 20px;
+  margin-top: 150px;
 `;
 
 const ImageButton = styled.TouchableOpacity`
@@ -41,4 +42,23 @@ const ImageButton = styled.TouchableOpacity`
 `;
 
 const KakaoImage = styled.Image`
+`;
+
+const Container = styled.View`
+  display: flex;
+  marginHorizontal: 15px;
+  alignItems: center;
+`;
+
+const SignUpBtn = styled.TouchableOpacity`
+  text-align: center;
+`;
+
+const BtnText = styled.Text`
+  color: #48b8fa;
+  font-weight: 100;
+  font-size: 15px;
+  line-height: 19px;
+  margin: 15px;
+  font-family: "Medium";
 `;
