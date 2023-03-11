@@ -1,12 +1,10 @@
 import React from "react";
-import { Text, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import styled from "styled-components/native";
-// import KakaoLoginBtn from "../components/Buttons/KakaoLoginBtn";
-import LoginBtn from "../components/Buttons/LoginBtn";
-import LoginArea from "../components/Login/LoginArea";
-import MoveButton from "../components/SignUp/MoveButton";
+
 import Margin from "./../components/Margin";
+import OAuthLoginButton from "../components/Buttons/OAuthLoginButton";
+
 const View = SafeAreaView;
 
 export default LoginScreen = ({ navigation }) => {
@@ -14,10 +12,8 @@ export default LoginScreen = ({ navigation }) => {
     <View>
       <Container>
         <LogoImage source={require("../../assets/logo.png")} />
-        <Margin size={50} />
-        <ImageButton>
-          <KakaoImage source={require("../../assets/kakao_login_medium_wide.png")} />
-        </ImageButton>
+        <Margin size={50 } />
+        <OAuthLoginButton navigation={navigation} />
       </Container>
     </View>
   );
@@ -34,11 +30,4 @@ const Container = styled.View`
 const LogoImage = styled.Image`
 `;
 
-const ImageButton = styled.TouchableOpacity`
-  display: flex;
-  alignItems: center;
-  width: 100%;
-`;
 
-const KakaoImage = styled.Image`
-`;
