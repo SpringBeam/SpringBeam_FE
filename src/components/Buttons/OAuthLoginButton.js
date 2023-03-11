@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components/native";
 
+const REDIRECT_URI = "";
+const authKakao = `https://수숙관백엔드서버.com/oauth2/kakao?redirect_uri=${REDIRECT_URI}`;
+
+
 export default OAuthLoginButton = ({ navigation }) => {
 
   const onPressHandler = () => {
@@ -10,7 +14,7 @@ export default OAuthLoginButton = ({ navigation }) => {
 
   return (
     <ImageButton onPress={() => onPressHandler()}>
-      <KakaoImage source={require("../../assets/kakao_login_medium_wide.png")} />
+      <KakaoImage source={require("../../../assets/kakao_login_medium_wide.png")} />
     </ImageButton>
   );
 
