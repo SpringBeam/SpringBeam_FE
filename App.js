@@ -5,6 +5,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
+// 딥 링크를 위한 라이브러리 expo-linking 불러오기
+import * as Linking from 'expo-linking';
 
 import store from "./src/store/store";
 import { theme } from "./src/global/theme/theme";
@@ -20,7 +22,11 @@ Font.loadAsync({
   ExtraBold: require("./src/global/fonts/NanumSquareEB.ttf"),
 });
 
+// 딥 링크를 위한 prefix 설정
+const prefix = Linking.createURL('/');
+
 export default function App() {
+
   useEffect(() => {
     setTimeout(() => {
       SplashScreen.hideAsync();
@@ -31,7 +37,16 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <SafeAreaProvider>
         <Provider store={store}>
-          <NavigationContainer>
+          <NavigationContainer
+            linking={{
+              prefixes: [prefix],
+              config: {
+                screens: {
+                  LoginRedirect: "oauth/redirect"
+                }
+              }
+            }}
+          >
             <RootNavigator />
           </NavigationContainer>
         </Provider>

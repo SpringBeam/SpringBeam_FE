@@ -13,7 +13,8 @@ export default LoginScreen = ({ navigation }) => {
       <Container>
         <LogoImage source={require("../../assets/logo.png")} />
         <Margin size={50 } />
-        <OAuthLoginButton navigation={navigation} />
+        <OAuthLoginButton />
+        {/* <OAuthLoginButton navigation={navigation} /> */}
       </Container>
     </View>
   );
