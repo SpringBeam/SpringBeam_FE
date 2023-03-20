@@ -4,26 +4,23 @@ import Header from "../components/Header";
 import StudentProfile from "../components/Classroom/StudentProfile";
 import Calendar from "../components/Calendar/Calendar";
 import Margin from "../components/Margin";
-import AssignmentNoteBtn from "../components/Classroom/AssignmentNoteBtn";
 import styled from "styled-components";
+
 const View = SafeAreaView;
 
 export default ClassroomScreen = ({ navigation }) => {
-  const onPressHandler = () => {
-    console.log("버튼 눌림");
-    navigation.navigate("ReviewNavigator");
-  };
+ 
   return (
     <View>
-      <Header title="일정 관리" navigation={navigation} back="SelectScreen" />
+      <Header title="강의실" navigation={navigation} back="SelectScreen" />
 
       <StudentProfile />
       <Calendar />
       <BtnView>
-        <BtnContainer onPress={() => onPressHandler()}>
+        <BtnContainer onPress={() => navigation.navigate("ReviewNavigator")}>
           <BtnText>복습노트</BtnText>
         </BtnContainer>
-        <BtnContainer onPress={() => onPressHandler()}>
+        <BtnContainer onPress={() => navigation.navigate("AssignmentNavigator")}>
           <BtnText>숙제노트</BtnText>
         </BtnContainer>
       </BtnView>
