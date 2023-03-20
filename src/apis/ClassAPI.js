@@ -1,6 +1,6 @@
 import { API } from './Token';
 
-const BASE_API = "https://address.com/api/";
+const BASE_API = "http://ec2-3-35-210-123.ap-northeast-2.compute.amazonaws.com";
 
 /**
  * IF-07
@@ -10,7 +10,7 @@ const BASE_API = "https://address.com/api/";
  */
 
 export const createClassAPI = async (data) => {
-  return await API.post(`${BASE_API}/command/tutoring/create`, data)
+  return await API.post(`${BASE_API}/api/tutoring/create`, data)
 };
 
 /**

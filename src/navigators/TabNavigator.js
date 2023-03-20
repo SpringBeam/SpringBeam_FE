@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import StudentsScreen from "../screens/StudentsScreen";
+import ClassroomListNavigator from "./ClassroomListNavigator";
 import MyPageScreen from "../screens/MyPageScreen";
 import ClassroomNavigator from "../navigators/ClassroomNavigator";
 import { FontAwesome } from "@expo/vector-icons";
@@ -12,7 +12,7 @@ export default TabNavigator = () => {
     <TabBar.Navigator>
       <TabBar.Screen
         name="학생 목록"
-        component={StudentsScreen}
+        component={ClassroomListNavigator}
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) =>
