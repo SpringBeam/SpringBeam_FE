@@ -1,15 +1,19 @@
 import React from "react";
 import styled from "styled-components/native";
+import * as Linking from "expo-linking";
 
-const REDIRECT_URI = "";
-const authKakao = `https://수숙관백엔드서버.com/oauth2/kakao?redirect_uri=${REDIRECT_URI}`;
-
+const REDIRECT_URI = "exp://localhost:19000/oauth/redirect";
+const authKakao = `http://ec2-3-35-210-123.ap-northeast-2.compute.amazonaws.com/oauth2/authorization/kakao?redirect_uri=${REDIRECT_URI}`;
 
 export default OAuthLoginButton = ({ navigation }) => {
 
+  const link = () => {
+    Linking.openURL(authKakao);
+  }
+
   const onPressHandler = () => {
     console.log("로그인 버튼 눌림");
-    navigation.navigate("TabNavigator");
+    link();
   };
 
   return (
