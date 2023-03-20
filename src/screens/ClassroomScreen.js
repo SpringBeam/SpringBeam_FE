@@ -5,14 +5,11 @@ import StudentProfile from "../components/Classroom/StudentProfile";
 import Calendar from "../components/Calendar/Calendar";
 import Margin from "../components/Margin";
 import styled from "styled-components";
-import AssignmentNavigator from "../navigators/AssignmentNavigator";
+
 const View = SafeAreaView;
 
 export default ClassroomScreen = ({ navigation }) => {
-  const onPressHandler = () => {
-    console.log("버튼 눌림");
-    navigation.navigate("ReviewNavigator");
-  };
+ 
   return (
     <View>
       <Header title="강의실" navigation={navigation} back="SelectScreen" />
