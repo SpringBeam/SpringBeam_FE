@@ -5,6 +5,7 @@ import StudentProfile from "../components/Classroom/StudentProfile";
 import Calendar from "../components/Calendar/Calendar";
 import Margin from "../components/Margin";
 import styled from "styled-components";
+import AssignmentNavigator from "../navigators/AssignmentNavigator";
 const View = SafeAreaView;
 
 export default ClassroomScreen = ({ navigation }) => {
@@ -19,10 +20,10 @@ export default ClassroomScreen = ({ navigation }) => {
       <StudentProfile />
       <Calendar />
       <BtnView>
-        <BtnContainer onPress={() => onPressHandler()}>
+        <BtnContainer onPress={() => navigation.navigate("ReviewNavigator")}>
           <BtnText>복습노트</BtnText>
         </BtnContainer>
-        <BtnContainer onPress={() => onPressHandler()}>
+        <BtnContainer onPress={() => navigation.navigate("AssignmentNavigator")}>
           <BtnText>숙제노트</BtnText>
         </BtnContainer>
       </BtnView>
