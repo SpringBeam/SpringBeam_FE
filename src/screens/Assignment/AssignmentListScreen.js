@@ -13,10 +13,9 @@ export default AssignmentListScreen = ({ navigation }) => {
     <View style={{ flex: 1 }}>
       <Header title="숙제 노트" navigation={navigation} back="parent" />
       <Margin size={20} />
-    <AssignmentList>
+      <AssignmentList>
       <AssignmentBox><Text>수학 고쟁이 5페이지</Text></AssignmentBox>
       <AssignmentBox><Text>수학 고쟁이 5페이지</Text></AssignmentBox>
-
       </AssignmentList>
       <AddReviewButton navigation={navigation} />
     </View>
