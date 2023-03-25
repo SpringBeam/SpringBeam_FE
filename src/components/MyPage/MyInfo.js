@@ -1,9 +1,13 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/native";
 
 import Margin from "../Margin";
 
-export default MyInfo = () => {
+export default MyInfo = ({
+  name,
+  email,
+  role,
+}) => {
   return(
     <ProfileContainer>
       <InfoContainer>
@@ -11,7 +15,7 @@ export default MyInfo = () => {
           이름: 
         </ContentHeader>
         <ContentText>
-          홍길동
+          {name}
         </ContentText>
       </InfoContainer>
       <InfoContainer>
@@ -19,7 +23,7 @@ export default MyInfo = () => {
           이메일: 
         </ContentHeader>
         <ContentText>
-          eagle625@naver.com
+          {email}
         </ContentText>
       </InfoContainer>
       <InfoContainer>
@@ -27,7 +31,7 @@ export default MyInfo = () => {
           역할: 
         </ContentHeader>
         <ContentText>
-          학생
+          {role}
         </ContentText>
       </InfoContainer>
     </ProfileContainer>
@@ -56,10 +60,12 @@ const ContentHeader = styled.Text`
   fontSize: 16px;
   fontFamily: "Bold";
   lineHeight: 20px;
+  color: ${(props) => props.theme['grey_300']};
 `;
 
 const ContentText = styled.Text`
   fontSize: 16px;
   fontFamily: "Regular";
   lineHeight: 20px;
+  color: ${(props) => props.theme['grey_300']};
 `;
