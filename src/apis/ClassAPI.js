@@ -1,4 +1,4 @@
-import { API } from './Token';
+import { API } from './TokenAPI';
 
 const BASE_API = "http://ec2-3-35-210-123.ap-northeast-2.compute.amazonaws.com";
 

@@ -22,6 +22,8 @@ export default LoginRedirect = ({ navigation }) => {
   // dispatch(setUserId(loginMemberId));
 
 
+  console.log(accessToken);
+
   const onPressHandler = () => {
     navigation.navigate("TabNavigator");
   };

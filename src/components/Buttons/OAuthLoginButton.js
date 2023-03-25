@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components/native";
 import * as Linking from "expo-linking";
 
-const REDIRECT_URI = "exp://localhost:19000/oauth/redirect";
-const authKakao = `http://ec2-3-35-210-123.ap-northeast-2.compute.amazonaws.com/oauth2/authorization/kakao?redirect_uri=${REDIRECT_URI}`;
+const REDIRECT_URI = "exp://192.168.2.254:19000/oauth/redirect";
+const authKakao = `http://ec2-43-201-71-214.ap-northeast-2.compute.amazonaws.com/oauth2/authorization/kakao?redirect_uri=${REDIRECT_URI}`;
 
 export default OAuthLoginButton = ({ navigation }) => {
 
