@@ -1,9 +1,18 @@
 import React from "react";
 import styled from "styled-components/native";
 
+import { showPicker } from "./ImagePicker";
+
 export default ProfileImage = () => {
+
+  const onPressHandler = () => {
+    showPicker();
+  };
+
   return (
-    <ImageContainer>
+    <ImageContainer
+      onPress={() => onPressHandler()}
+    >
       
     </ImageContainer>
   );
