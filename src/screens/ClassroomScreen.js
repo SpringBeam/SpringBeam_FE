@@ -1,10 +1,11 @@
 import React from "react";
+import styled from "styled-components";
 import { SafeAreaView } from "react-native-safe-area-context";
+
 import Header from "../components/Header";
+import Margin from "../components/Margin";
 import StudentProfile from "../components/Classroom/StudentProfile";
 import Calendar from "../components/Calendar/Calendar";
-import Margin from "../components/Margin";
-import styled from "styled-components";
 
 const View = SafeAreaView;
 
