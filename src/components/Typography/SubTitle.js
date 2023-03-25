@@ -19,6 +19,6 @@ const SubTitleContainer = styled.View`
 const SubTitleText = styled.Text`
   fontSize: 18px;
   fontFamily: ExtraBold;
-  color: ${(props) => props.theme['blue_100']};
+  color: ${(props) => props.theme['grey_300']};
 `;
 
