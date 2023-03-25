@@ -9,7 +9,7 @@ import DayPicker from "./DayPicker";
 import AddDate from "./AddDate";
 import DateList from "./DateList";
 import StartDate from "./StartDate";
-import { createClassAPI } from "../../apis/Class";
+import { createClassAPI } from "../../apis/ClassAPI";
 
 export default AddClassForm = () => {
   const [ subject, setSubject ] = useState("");
