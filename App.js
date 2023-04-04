@@ -26,6 +26,9 @@ Font.loadAsync({
 const prefix = Linking.createURL('/');
 
 export default function App() {
+  const linking = {
+    prefixes: [prefix],
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -40,9 +43,10 @@ export default function App() {
           <NavigationContainer
             linking={{
               prefixes: [prefix],
+              initialRouteName: "LoginScreen",
               config: {
                 screens: {
-                  LoginRedirect: "oauth/redirect"
+                  LoginScreen: "login",
                 }
               }
             }}

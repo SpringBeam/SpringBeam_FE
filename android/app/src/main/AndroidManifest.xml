@@ -1,3 +1,29 @@
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-<uses-permission android:name="android.permission.CAMERA"/>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.example.myapp">
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.CAMERA"/>
+  <uses-permission android:name="android.permission.INTERNET"/>
+
+  <application
+      ...>
+
+      <!-- 아래의 intent-filter를 추가합니다 -->
+      <activity
+          android:name=".MyActivity"
+          android:label="@string/app_name"
+          android:theme="@style/AppTheme.NoActionBar">
+          <intent-filter>
+              <action android:name="android.intent.action.VIEW" />
+              <category android:name="android.intent.category.DEFAULT" />
+              <category android:name="android.intent.category.BROWSABLE" />
+
+              <!-- 스키마 부분은 본인이 사용할 스키마로 대체해야 합니다. -->
+            <data
+              android:scheme="myapp"
+              android:host="myapp.com" 
+            />
+          </intent-filter>
+      </activity>
+  </application>
+</manifest>
