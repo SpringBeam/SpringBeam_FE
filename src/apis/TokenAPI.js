@@ -18,7 +18,9 @@ API.interceptors.request.use(async (res) => {
   const refreshToken = getRefreshToken();
   const accessTokenExpirationTime = AsyncStorage.getItem("accessTokenExpirationTime");
 
-  if (refreshToken && moment(accessTokenExpirationTime).diff(moment()) < 0) {
+  console.log("인터셉터 가동")
+
+  // if (refreshToken && moment(accessTokenExpirationTime).diff(moment()) < 0) {
     const { data } = await axios.post(
       `${BASE_API}/auth/refresh`,
       {},
@@ -36,5 +38,5 @@ API.interceptors.request.use(async (res) => {
       "accessTokenExpirationTime",
       moment().add(8, "minutes").format("yyyy-MM-DD HH:mm:ss"),
     );
-  }
+  // }
 });

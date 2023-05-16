@@ -10,7 +10,7 @@ const BASE_API = "http://ec2-3-35-210-123.ap-northeast-2.compute.amazonaws.com";
  */
 
 export const createClassAPI = async (data) => {
-  return await API.post(`${BASE_API}/api/tutoring/create`, data)
+  return await API.post(`${BASE_API}/api/tutoring`, data)
 };
 
 /**

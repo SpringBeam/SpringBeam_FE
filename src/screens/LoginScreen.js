@@ -28,14 +28,14 @@ export default LoginScreen = ({ navigation }) => {
         if (url !== null) {
           const params = queryString.parseUrl(url).query;
           const { accessToken, refreshToken, loginMemberId, accessTokenExpirationTime } = params;
-          if (accessToken) {
-            console.log('해볼게')
-            setAccessToken(accessToken);
-            setRefreshToken(refreshToken);
-            // setAuthentication(true);
-            console.log("accessToken: ", accessToken)
-            console.log("refreshToken: ", refreshToken)
-            console.log('되어라', url, accessToken, refreshToken);
+          console.log('해볼게')
+          setAccessToken(accessToken);
+          setRefreshToken(refreshToken);
+          // setAuthentication(true);
+          console.log("accessToken: ", accessToken)
+          console.log("refreshToken: ", refreshToken)
+          console.log('되어라', url, accessToken, refreshToken);
+          if (accessToken, refreshToken) {
             setTimeout(() => {
               navigation.navigate("TabNavigator");
             }, 3000);

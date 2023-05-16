@@ -12,12 +12,15 @@ export const setAccessToken = async (accessToken) => {
 // 액세스 토큰 불러오기
 export const getAccessToken = async () => {
   try {
-    const value = await AsyncStorage.getItem("access-token");
-    if (value !== null) {
-      console.log("accessToken", value);
+    const accessToken = await AsyncStorage.getItem("access-token");
+    if (accessToken !== null) {
+      return accessToken;
+    } else {
+      return null; // 액세스 토큰이 없을 경우 null 반환
     }
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    console.log(error);
+    return null;
   }
 };
 

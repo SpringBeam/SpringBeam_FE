@@ -33,7 +33,7 @@ export default AddClassForm = () => {
         console.log(res.data);
       })
       .catch((error) => {
-        console.log("안 돼용!", error.message)
+        console.log("안 돼용!", error);
       });
   };
 
