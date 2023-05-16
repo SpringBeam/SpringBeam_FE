@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 import moment from "moment";
 import {
@@ -15,7 +16,7 @@ const BASE_API = "";
 API.interceptors.request.use(async (res) => {
   let accessToken = getAccessToken();
   const refreshToken = getRefreshToken();
-  const accessTokenExpirationTime = localStorage.getItem("accessTokenExpirationTime");
+  const accessTokenExpirationTime = AsyncStorage.getItem("accessTokenExpirationTime");
 
   if (refreshToken && moment(accessTokenExpirationTime).diff(moment()) < 0) {
     const { data } = await axios.post(
@@ -31,7 +32,7 @@ API.interceptors.request.use(async (res) => {
     accessToken = data.accessToken;
     setAccessToken(data.accessToken);
     setRefreshToken(data.refreshToken);
-    localStorage.setItem(
+    AsyncStorage.setItem(
       "accessTokenExpirationTime",
       moment().add(8, "minutes").format("yyyy-MM-DD HH:mm:ss"),
     );
