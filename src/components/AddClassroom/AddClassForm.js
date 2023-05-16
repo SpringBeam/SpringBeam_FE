@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Button } from "react-native";
 import styled from "styled-components/native";
@@ -9,9 +10,11 @@ import DayPicker from "./DayPicker";
 import AddDate from "./AddDate";
 import DateList from "./DateList";
 import StartDate from "./StartDate";
-import { createClassAPI } from "../../apis/ClassAPI";
+// import { createClassAPI } from "../../apis/ClassAPI";
 
-export default AddClassForm = () => {
+import { getAccessToken } from "../../auth";
+
+export default AddClassForm = ({ navigation }) => {
   const [ subject, setSubject ] = useState("");
   const [ selectedDay, setSelectedDay ] = useState("");
   const [ startTime, setStartTime ] = useState("");
@@ -19,22 +22,39 @@ export default AddClassForm = () => {
   const [ startDate, setStartDate ] = useState("");
   const [ totalDate, setTotalDate ] = useState([]);
 
-  const createForm = () => {
-    const stringDate = totalDate.join(" ");
+  // API 통신을 위한 AccessToken 불러오기
+  const [accessToken, setAccessToken] = useState("");
+  useEffect(() => {
+    const fetchAccessToken = async () => {
+      const token = await getAccessToken();
+      setAccessToken(token);
+    };
 
+    fetchAccessToken();
+  }, []);
+
+  // 수업 생성 API
+  const createForm = async () => {
+    const stringDate = totalDate.join(" ");
     const body = {
       "subject": subject,
       "dayTime": stringDate.trim(),
       "startDate": startDate
     }
-    console.log(body)
-    createClassAPI(body)
-      .then((res) =>{
-        console.log(res.data);
-      })
-      .catch((error) => {
-        console.log("안 돼용!", error.message)
+    console.log("보내기 전", body);
+    try {
+      const response = await axios.post("http://ec2-43-201-71-214.ap-northeast-2.compute.amazonaws.com/api/tutoring", body, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
       });
+      console.log("response: ", response);
+      setTimeout(() => {
+        navigation.navigate("StudentsScreen");
+      }, 2000);
+    } catch (error) {
+      console.log("error: ", error);
+    }
   };
 
   return (
@@ -84,30 +104,4 @@ export default AddClassForm = () => {
 
 const FormContainer = styled.View`
   marginHorizontal: 10px;
-`;
-
-const DayTimeContainer = styled.View`
-  display: flex;
-  flexDirection: row;
-  justifyContent: space-between;
-  alignItems: center;
-`;
-
-const TextContainer = styled.View`
-  display: flex;
-  flexDirection: row;
-`;
-
-const TimeText = styled.Text`
-  margin: 10px;
-  fontSize: 18px;
-  color: ${(props) => props.theme["blue_100"]};
-`;
-
-const AddButton = styled.TouchableOpacity`
-  paddingVertical: 6px;
-  paddingHorizontal: 8px;
-  backgroundColor: ${(props) => props.theme["blue_100"]};
-  borderRadius: 300px;
-  alignItems: center;
 `;

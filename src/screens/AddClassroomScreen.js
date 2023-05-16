@@ -13,7 +13,7 @@ export default AddClassroomScreen = ({ navigation }) => {
     <View>
       <Header title="수업 추가" navigation={navigation} back="parent"/>
       <Margin size={10} />
-      <AddClassForm />
+      <AddClassForm navigation={navigation} />
     </View>
   );
 };

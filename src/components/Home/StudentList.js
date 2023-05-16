@@ -7,6 +7,7 @@ import styled from "styled-components/native";
 import { AntDesign } from "@expo/vector-icons";
 
 const bottomSpace = getBottomSpace();
+
 export default (props) => {
   return (
     <ScrollView
