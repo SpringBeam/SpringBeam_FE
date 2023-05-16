@@ -41,7 +41,7 @@ export default StudentsScreen = ({ navigation }) => {
       });
       console.log("response: ", response);
     } catch (error) {
-      console.log("error: ", error.message);
+      console.log("error: ", error, error.message);
     }
   };
   
