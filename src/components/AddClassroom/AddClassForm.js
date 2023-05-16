@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Button } from "react-native";
 import styled from "styled-components/native";
@@ -11,6 +12,8 @@ import DateList from "./DateList";
 import StartDate from "./StartDate";
 import { createClassAPI } from "../../apis/ClassAPI";
 
+import { getAccessToken } from "../../auth";
+
 export default AddClassForm = () => {
   const [ subject, setSubject ] = useState("");
   const [ selectedDay, setSelectedDay ] = useState("");
@@ -19,7 +22,18 @@ export default AddClassForm = () => {
   const [ startDate, setStartDate ] = useState("");
   const [ totalDate, setTotalDate ] = useState([]);
 
-  const createForm = () => {
+  const [accessToken, setAccessToken] = useState("");
+
+  useEffect(() => {
+    const fetchAccessToken = async () => {
+      const token = await getAccessToken();
+      setAccessToken(token);
+    };
+
+    fetchAccessToken();
+  }, []);
+
+  const createForm = async () => {
     const stringDate = totalDate.join(" ");
 
     const body = {
@@ -27,14 +41,19 @@ export default AddClassForm = () => {
       "dayTime": stringDate.trim(),
       "startDate": startDate
     }
-    console.log(body)
-    createClassAPI(body)
-      .then((res) =>{
-        console.log(res.data);
-      })
-      .catch((error) => {
-        console.log("안 돼용!", error);
+
+    console.log("보내기 전", body);
+
+    try {
+      const response = await axios.post("http://ec2-43-201-71-214.ap-northeast-2.compute.amazonaws.com/api/tutoring", body, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
       });
+      console.log("response: ", response);
+    } catch (error) {
+      console.log("error: ", error);
+    }
   };
 
   return (
@@ -84,30 +103,4 @@ export default AddClassForm = () => {
 
 const FormContainer = styled.View`
   marginHorizontal: 10px;
-`;
-
-const DayTimeContainer = styled.View`
-  display: flex;
-  flexDirection: row;
-  justifyContent: space-between;
-  alignItems: center;
-`;
-
-const TextContainer = styled.View`
-  display: flex;
-  flexDirection: row;
-`;
-
-const TimeText = styled.Text`
-  margin: 10px;
-  fontSize: 18px;
-  color: ${(props) => props.theme["blue_100"]};
-`;
-
-const AddButton = styled.TouchableOpacity`
-  paddingVertical: 6px;
-  paddingHorizontal: 8px;
-  backgroundColor: ${(props) => props.theme["blue_100"]};
-  borderRadius: 300px;
-  alignItems: center;
 `;
