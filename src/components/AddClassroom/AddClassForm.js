@@ -10,11 +10,11 @@ import DayPicker from "./DayPicker";
 import AddDate from "./AddDate";
 import DateList from "./DateList";
 import StartDate from "./StartDate";
-import { createClassAPI } from "../../apis/ClassAPI";
+// import { createClassAPI } from "../../apis/ClassAPI";
 
 import { getAccessToken } from "../../auth";
 
-export default AddClassForm = () => {
+export default AddClassForm = ({ navigation }) => {
   const [ subject, setSubject ] = useState("");
   const [ selectedDay, setSelectedDay ] = useState("");
   const [ startTime, setStartTime ] = useState("");
@@ -22,8 +22,8 @@ export default AddClassForm = () => {
   const [ startDate, setStartDate ] = useState("");
   const [ totalDate, setTotalDate ] = useState([]);
 
+  // API 통신을 위한 AccessToken 불러오기
   const [accessToken, setAccessToken] = useState("");
-
   useEffect(() => {
     const fetchAccessToken = async () => {
       const token = await getAccessToken();
@@ -33,17 +33,15 @@ export default AddClassForm = () => {
     fetchAccessToken();
   }, []);
 
+  // 수업 생성 API
   const createForm = async () => {
     const stringDate = totalDate.join(" ");
-
     const body = {
       "subject": subject,
       "dayTime": stringDate.trim(),
       "startDate": startDate
     }
-
     console.log("보내기 전", body);
-
     try {
       const response = await axios.post("http://ec2-43-201-71-214.ap-northeast-2.compute.amazonaws.com/api/tutoring", body, {
         headers: {
@@ -51,6 +49,9 @@ export default AddClassForm = () => {
         },
       });
       console.log("response: ", response);
+      setTimeout(() => {
+        navigation.navigate("StudentsScreen");
+      }, 2000);
     } catch (error) {
       console.log("error: ", error);
     }
