@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Linking } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import styled from "styled-components/native";
@@ -18,31 +18,42 @@ import OAuthLoginButton from "../components/Buttons/OAuthLoginButton";
 const View = SafeAreaView;
 
 export default LoginScreen = ({ navigation }) => {
+
+  const [isClicked, setIsClicked] = useState(0);
+
   useEffect(() => {
     const getParamsFromUrl = async () => {
       try {
         const url = await Linking.getInitialURL(); // 비동기로 호출하고 null일 경우 예외 처리
         if (url !== null) {
-          const { accessToken, refreshToken, loginMemberId, accessTokenExpirationTime } = queryString.parse(url);
-          setAccessToken(accessToken);
-          setRefreshToken(refreshToken);
-          setAuthentication(true);
-          console.log('되어라', url, accessToken, refreshToken);
+          const params = queryString.parseUrl(url).query;
+          const { accessToken, refreshToken, loginMemberId, accessTokenExpirationTime } = params;
+          if (accessToken) {
+            console.log('해볼게')
+            setAccessToken(accessToken);
+            setRefreshToken(refreshToken);
+            // setAuthentication(true);
+            console.log("accessToken: ", accessToken)
+            console.log("refreshToken: ", refreshToken)
+            console.log('되어라', url, accessToken, refreshToken);
+            setTimeout(() => {
+              navigation.navigate("TabNavigator");
+            }, 3000);
+          }
         }
       } catch (error) {
         console.log('error', error);
       }
     };
-  
     getParamsFromUrl();
-  }, []);
+  }, [isClicked]);
 
   return (
     <View>
       <Container>
         <LogoImage source={require("../../assets/logo.png")} />
         <Margin size={50 } />
-        <OAuthLoginButton />
+        <OAuthLoginButton isClicked={isClicked} setIsClicked={setIsClicked} />
         {/* <OAuthLoginButton navigation={navigation} /> */}
       </Container>
     </View>

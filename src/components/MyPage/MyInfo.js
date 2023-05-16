@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, } from "react";
 import styled from "styled-components/native";
+
+import { myInfoAPI } from "../../apis/UserAPI";
 
 import Margin from "../Margin";
 
@@ -8,6 +10,15 @@ export default MyInfo = ({
   email,
   role,
 }) => {
+
+  const getUserInfo = () => {
+    myInfoAPI.then((res) => res.data);
+  };
+
+  // useEffect(() => {
+  //   getUserInfo();
+  // }, []);
+
   return(
     <ProfileContainer>
       <InfoContainer>

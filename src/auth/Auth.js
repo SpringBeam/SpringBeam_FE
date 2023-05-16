@@ -14,7 +14,7 @@ export const getAccessToken = async () => {
   try {
     const value = await AsyncStorage.getItem("access-token");
     if (value !== null) {
-      console.log(value);
+      console.log("accessToken", value);
     }
   } catch (e) {
     console.log(e);

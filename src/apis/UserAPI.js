@@ -1,4 +1,4 @@
-import { API } from './Token';
+import { API } from './TokenAPI';
 
 const BASE_API = "https://address.com/api/";
 
