@@ -35,11 +35,11 @@ const pickerSelectStyles = StyleSheet.create({
     fontSize: 16,
     paddingVertical: 12,
     paddingHorizontal: 0,
-    fontFamily: "ExtraBold",
+    fontFamily: "Bold",
     // borderWidth: 1,
     // borderColor: 'gray',
     // borderRadius: 4,
-    color: 'black',
+    color: "gray",
     paddingRight: 30 // to ensure the text is never behind the icon
   },
   inputAndroid: {
@@ -47,11 +47,11 @@ const pickerSelectStyles = StyleSheet.create({
     fontSize: 16,
     paddingVertical: 8,
     paddingHorizontal: 0,
-    fontFamily: "ExtraBold",
+    fontFamily: "medium",
     // borderWidth: 0.5,
     // borderColor: 'purple',
     // borderRadius: 8,
-    color: 'black',
+    color: "dimgrey",
     paddingRight: 30 // to ensure the text is never behind the icon
   }
 });

@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -7,15 +8,45 @@ import ReviewHeader from "../../components/Review/ReviewHeader";
 import ReviewListContainer from "../../components/Review/ReviewListContainer";
 import AddReviewButton from "../../components/Review/AddReviewButton";
 
+import { getAccessToken } from "../../auth";
+
 const View = SafeAreaView;
 
 export default ReviewScreen = ({ navigation }) => {
 
   const [ reviewData, setReviewData ] = useState();
 
-  const getReviewData = () => {
+  const [accessToken, setAccessToken] = useState("");
 
+  useEffect(() => {
+    const fetchAccessToken = async () => {
+      const token = await getAccessToken();
+      setAccessToken(token);
+    };
+
+    fetchAccessToken();
+  }, []);
+
+  const getReviewData = async () => {
+    const body = { "tutoringId": "14"}
+    try {
+      const response = await axios.post("http://ec2-43-201-71-214.ap-northeast-2.compute.amazonaws.com/api/review/list", body, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+      console.log("response: ", response);
+    } catch (error) {
+      console.log("error: ", error);
+    }
   };
+
+  useEffect(() => {
+    if (accessToken) {
+      console.log(accessToken);
+      getReviewData();
+    };
+  }, [accessToken]);
 
   return (
     <View style={{flex:1}}>

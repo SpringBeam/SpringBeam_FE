@@ -5,6 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
+import { RootSiblingParent } from "react-native-root-siblings";
 // 딥 링크를 위한 라이브러리 expo-linking 불러오기
 import * as Linking from 'expo-linking';
 
@@ -40,19 +41,21 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <SafeAreaProvider>
         <Provider store={store}>
-          <NavigationContainer
-            linking={{
-              prefixes: [prefix],
-              initialRouteName: "LoginScreen",
-              config: {
-                screens: {
-                  LoginScreen: "login",
+          <RootSiblingParent>
+            <NavigationContainer
+              linking={{
+                prefixes: [prefix],
+                initialRouteName: "LoginScreen",
+                config: {
+                  screens: {
+                    LoginScreen: "login",
+                  }
                 }
-              }
-            }}
-          >
-            <RootNavigator />
-          </NavigationContainer>
+              }}
+            >
+              <RootNavigator />
+            </NavigationContainer>
+          </RootSiblingParent>
         </Provider>
       </SafeAreaProvider>
     </ThemeProvider>

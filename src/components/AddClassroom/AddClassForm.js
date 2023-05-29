@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Button } from "react-native";
 import styled from "styled-components/native";
+import Toast from "react-native-root-toast";
 
 import SubTitle from "../Typography/SubTitle";
 import Margin from "../Margin";
@@ -48,10 +49,12 @@ export default AddClassForm = ({ navigation }) => {
           Authorization: `Bearer ${accessToken}`,
         },
       });
+      const toast = Toast.show("성공적으로 클래스가 만들어졌어요! ☺");
       console.log("response: ", response);
       setTimeout(() => {
+        Toast.hide(toast);
         navigation.navigate("StudentsScreen");
-      }, 2000);
+      }, 3000);
     } catch (error) {
       console.log("error: ", error);
     }
@@ -94,6 +97,11 @@ export default AddClassForm = ({ navigation }) => {
         setTime={setStartDate}
       />
       <Margin size={30} />
+      <TextContainer>
+        <StartDateText>
+          {startDate}
+        </StartDateText>
+      </TextContainer>
       <Button
         title="되냐"
         onPress={()=>createForm()}
@@ -104,4 +112,17 @@ export default AddClassForm = ({ navigation }) => {
 
 const FormContainer = styled.View`
   marginHorizontal: 10px;
+`;
+
+const TextContainer = styled.View`
+  display: flex;
+  flexDirection: row;
+  justifyContent: flex-start;
+  alignItems: center;
+  width: 100%;
+`;
+
+const StartDateText = styled.Text`
+  fontSize: 16px;
+  fontFamily: "Medium";
 `;

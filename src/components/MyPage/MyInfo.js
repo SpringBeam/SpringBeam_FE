@@ -1,5 +1,8 @@
-import React, { useEffect, } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components/native";
+
+import { getAccessToken } from "../../auth";
 
 import { myInfoAPI } from "../../apis/UserAPI";
 
@@ -11,13 +14,35 @@ export default MyInfo = ({
   role,
 }) => {
 
-  const getUserInfo = () => {
-    myInfoAPI.then((res) => res.data);
+  // API 통신을 위한 AccessToken 불러오기
+  const [accessToken, setAccessToken] = useState("");
+  useEffect(() => {
+    const fetchAccessToken = async () => {
+      const token = await getAccessToken();
+      setAccessToken(token);
+    };
+    fetchAccessToken();
+  }, []);
+
+  // 사용자 정보 조회 API
+  const getUserInfo = async () => {
+    try {
+      const response = await axios.get("http://ec2-43-201-71-214.ap-northeast-2.compute.amazonaws.com/api/user/detail", {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+      console.log("response: ", response);
+    } catch (error) {
+      console.log("error: ", error.message, error);
+    }
   };
 
-  // useEffect(() => {
-  //   getUserInfo();
-  // }, []);
+  useEffect(() => {
+    if (accessToken) {
+      getUserInfo();
+    }
+  }, [accessToken]);
 
   return(
     <ProfileContainer>
