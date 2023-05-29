@@ -25,7 +25,7 @@ export default AddReview = () => {
   const [ reviewBody, setReviewBody ] = useState("");
   const handleSubmit = async () => {
     const body = {
-      "tutoringId": 1,
+      "tutoringId": 14,
       "body": "단어책 10~15p",
       "tagId": 3
     };
