@@ -9,8 +9,15 @@ import { getAccessToken } from "../../auth";
 
 const bottomSpace = getBottomSpace();
 
-export default (props) => {
+export default ({ navigation }) => {
+  // 학생 정보 state 관리
   const [studentList, setStudentList] = useState([]);
+
+  // 강의실 이동 버튼 함수
+  const handleOnPress = (classroomInfo) => {
+    console.log(classroomInfo);
+    navigation.navigate("강의실", { classroomInfo });
+  };
 
   // API 통신을 위한 AccessToken 불러오기
   const [accessToken, setAccessToken] = useState("");
@@ -50,15 +57,17 @@ export default (props) => {
         <View key={item.tutoringId}>
           <Container>
             <IconContainer>
-              <Ionicons name="person-circle-outline" size={56} color="#424242" />
+              <Ionicons name="person-circle-outline" size={54} color="#424242" />
             </IconContainer>
             <TextContainer>
-              <Name>{item.tuteeName}</Name>
+              <Name>{item.tuteeName === "" ? "튜티를 초대해주세요!" : item.tuteeName}</Name>
               <Info>
                 {item.subject} {item.dayTime}
               </Info>
             </TextContainer>
-            <IconContainer>
+            <IconContainer
+              onPress={() => handleOnPress(item)}
+            >
               <AntDesign name="right" size={24} color="#424242" />
             </IconContainer>
           </Container>
@@ -86,14 +95,17 @@ const TextContainer = styled.View`
   justifyContent: center;
 `;
 
-const IconContainer = styled.View`
+const IconContainer = styled.TouchableOpacity`
+  display: flex;
+  flexDirection: column;
   justifyContent: center;
+  alignItems: center;
 `;
 
 const Name = styled.Text`
   color: ${(props) => props.theme["grey_300"]};
   fontFamily: "ExtraBold";
-  fontSize: 18px;
+  fontSize: 16px;
   lineHeight: 27px;
 `;
   

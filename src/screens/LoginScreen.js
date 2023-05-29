@@ -28,13 +28,13 @@ export default LoginScreen = ({ navigation }) => {
         if (url !== null) {
           const params = queryString.parseUrl(url).query;
           const { accessToken, refreshToken, loginMemberId, accessTokenExpirationTime } = params;
-          console.log('해볼게')
+          console.log('로그인을 시도합니다.')
           setAccessToken(accessToken);
           setRefreshToken(refreshToken);
           // setAuthentication(true);
           console.log("accessToken: ", accessToken)
           console.log("refreshToken: ", refreshToken)
-          console.log('되어라', url, accessToken, refreshToken);
+          console.log('로그인 결과값은 다음과 같습니다.', url, accessToken, refreshToken);
           if (accessToken, refreshToken) {
             setTimeout(() => {
               navigation.navigate("TabNavigator");
@@ -42,7 +42,7 @@ export default LoginScreen = ({ navigation }) => {
           }
         }
       } catch (error) {
-        console.log('error', error);
+        console.log('getParamsFromURL error', error);
       }
     };
     getParamsFromUrl();
