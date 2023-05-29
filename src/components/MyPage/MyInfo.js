@@ -13,6 +13,7 @@ export default MyInfo = ({
   email,
   role,
 }) => {
+  const [userInfo, setUserInfo] = useState([]);
 
   // API 통신을 위한 AccessToken 불러오기
   const [accessToken, setAccessToken] = useState("");
@@ -32,9 +33,10 @@ export default MyInfo = ({
           Authorization: `Bearer ${accessToken}`,
         },
       });
-      console.log("response: ", response);
+      console.log("getUserInfo response: ", response.data);
+      setUserInfo(response.data);
     } catch (error) {
-      console.log("error: ", error.message, error);
+      console.log("getUserInfo error: ", error.message, error);
     }
   };
 
@@ -51,15 +53,7 @@ export default MyInfo = ({
           이름: 
         </ContentHeader>
         <ContentText>
-          {name}
-        </ContentText>
-      </InfoContainer>
-      <InfoContainer>
-        <ContentHeader>
-          이메일: 
-        </ContentHeader>
-        <ContentText>
-          {email}
+          {userInfo.name}
         </ContentText>
       </InfoContainer>
       <InfoContainer>
@@ -67,7 +61,7 @@ export default MyInfo = ({
           역할: 
         </ContentHeader>
         <ContentText>
-          {role}
+          {userInfo.role}
         </ContentText>
       </InfoContainer>
     </ProfileContainer>
